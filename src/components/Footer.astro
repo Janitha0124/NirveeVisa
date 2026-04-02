@@ -1,0 +1,141 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="footer-info">
+      <h3>IMMIGRA<span class="gold-text">SITE</span></h3>
+      <p>Your trusted partner for global immigration services. We simplify the complexity of moving abroad.</p>
+      <div class="social-links">
+        <!-- Social icons placeholder -->
+      </div>
+    </div>
+
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/services">Our Services</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/eligibility">Eligibility</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-links">
+      <h4>Visa Categories</h4>
+      <ul>
+        <li><a href="/visa#skilled">Skilled Migration</a></li>
+        <li><a href="/visa#study">Study Visa</a></li>
+        <li><a href="/visa#family">Family Visa</a></li>
+        <li><a href="/visa#business">Business Visa</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-contact">
+      <h4>Contact Us</h4>
+      <p>123 Immigration Way, New York, NY 10001</p>
+      <p>Phone: +1 (234) 567-890</p>
+      <p>Email: info@immigrasite.com</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container bottom-content">
+      <p>&copy; {currentYear} ImmigraSite. All Rights Reserved.</p>
+      <div class="legal-links">
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/terms">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 80px 0 20px;
+    margin-top: 80px;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 40px;
+    margin-bottom: 60px;
+  }
+
+  .footer-info h3 {
+    color: var(--white);
+    margin-bottom: 20px;
+  }
+
+  .footer-info p {
+    color: var(--gray-light);
+    margin-bottom: 25px;
+  }
+
+  .footer-links h4, .footer-contact h4 {
+    color: var(--accent-gold);
+    margin-bottom: 25px;
+  }
+
+  .footer-links ul li {
+    margin-bottom: 15px;
+  }
+
+  .footer-links ul li a {
+    color: var(--gray-light);
+  }
+
+  .footer-links ul li a:hover {
+    color: var(--accent-gold);
+    padding-left: 5px;
+  }
+
+  .footer-contact p {
+    color: var(--gray-light);
+    margin-bottom: 15px;
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 20px;
+  }
+
+  .bottom-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    color: var(--gray-light);
+  }
+
+  .legal-links {
+    display: flex;
+    gap: 20px;
+  }
+
+  .gold-text {
+    color: var(--accent-gold);
+  }
+
+  @media (max-width: 992px) {
+    .footer-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+    }
+    .bottom-content {
+      flex-direction: column;
+      gap: 15px;
+      text-align: center;
+    }
+  }
+</style>

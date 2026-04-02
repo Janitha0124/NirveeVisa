@@ -1,0 +1,85 @@
+---
+interface Props {
+  name: string;
+  role: string;
+  content: string;
+  image?: string;
+}
+
+const { name, role, content, image = '👤' } = Astro.props;
+---
+
+<div class="testimonial-card">
+  <div class="quote-icon">"</div>
+  <p class="content">{content}</p>
+  <div class="user-info">
+    <div class="avatar">{image}</div>
+    <div class="details">
+      <h4>{name}</h4>
+      <span>{role}</span>
+    </div>
+  </div>
+</div>
+
+<style>
+  .testimonial-card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    border: 1px solid var(--gray-light);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .quote-icon {
+    font-size: 4rem;
+    color: var(--accent-gold);
+    opacity: 0.2;
+    position: absolute;
+    top: 10px;
+    right: 30px;
+    font-family: serif;
+    height: 30px;
+    line-height: 1;
+  }
+
+  .content {
+    font-style: italic;
+    color: #4B5563;
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: auto;
+  }
+
+  .avatar {
+    width: 50px;
+    height: 50px;
+    background: var(--gray-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+  }
+
+  .details h4 {
+    font-size: 1rem;
+    margin-bottom: 2px;
+  }
+
+  .details span {
+    font-size: 0.85rem;
+    color: var(--secondary-color);
+    font-weight: 500;
+  }
+</style>

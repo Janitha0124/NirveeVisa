@@ -1,0 +1,155 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import ContactForm from '../components/ContactForm.astro';
+---
+
+<MainLayout title="Contact Us" description="Get in touch with our expert immigration consultants for personalized advice.">
+  <section class="page-header section-padding">
+    <div class="container text-center">
+      <h1>Contact Our Experts</h1>
+      <p class="subtitle">We're here to answer your questions and guide you through your immigration journey.</p>
+    </div>
+  </section>
+
+  <section class="contact-section section-padding">
+    <div class="container grid-2">
+      <div class="contact-info">
+        <h2>Reach Out Today</h2>
+        <p>Whether you have a quick question or need a full consultation, our team is ready to help you.</p>
+        
+        <div class="info-blocks">
+          <div class="info-item">
+            <span class="icon">📍</span>
+            <div>
+              <h4>Our Office</h4>
+              <p>123 Immigration Way, New York, NY 10001</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <span class="icon">📞</span>
+            <div>
+              <h4>Phone Number</h4>
+              <p>+1 (234) 567-890</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <span class="icon">✉️</span>
+            <div>
+              <h4>Email Address</h4>
+              <p>info@immigrasite.com</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <span class="icon">⏰</span>
+            <div>
+              <h4>Working Hours</h4>
+              <p>Mon - Fri: 9:00 AM - 6:00 PM</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="social-box">
+          <h4>Follow Us</h4>
+          <div class="social-icons">
+            <!-- Icons would go here -->
+            <span class="placeholder-icon">f</span>
+            <span class="placeholder-icon">t</span>
+            <span class="placeholder-icon">in</span>
+            <span class="placeholder-icon">ig</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form-wrapper">
+        <ContactForm />
+      </div>
+    </div>
+  </section>
+
+  <section class="map-placeholder">
+    <div class="container glass-map flex-center">
+      <h3>Google Maps Integration Placeholder</h3>
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+  .page-header {
+    background-color: var(--primary-color);
+    color: var(--white);
+  }
+
+  .page-header h1 { color: var(--white); }
+  
+  .subtitle {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: var(--gray-light);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: flex-start;
+  }
+
+  .contact-info h2 { margin-bottom: 25px; }
+  .contact-info p { margin-bottom: 40px; color: #4B5563; }
+
+  .info-blocks { display: flex; flex-direction: column; gap: 30px; }
+
+  .info-item {
+    display: flex;
+    gap: 20px;
+  }
+
+  .icon {
+    font-size: 1.5rem;
+    background: rgba(30, 58, 138, 0.05);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .info-item h4 { margin-bottom: 5px; }
+  .info-item p { margin-bottom: 0; font-size: 0.95rem; }
+
+  .social-box { margin-top: 50px; }
+  .social-box h4 { margin-bottom: 20px; }
+  .social-icons { display: flex; gap: 15px; }
+  
+  .placeholder-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--primary-color);
+    color: var(--white);
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .placeholder-icon:hover { background: var(--accent-gold); color: var(--primary-color); }
+
+  .map-placeholder { padding: 40px 0 80px; }
+  .glass-map {
+    height: 300px;
+    background: var(--gray-light);
+    border-radius: 20px;
+    border: 2px dashed #CBD5E1;
+  }
+
+  @media (max-width: 992px) {
+    .grid-2 { grid-template-columns: 1fr; gap: 60px; }
+  }
+</style>

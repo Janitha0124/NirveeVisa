@@ -1,0 +1,157 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+
+const posts = [
+  {
+    title: 'New Canadian Express Entry Rules 2026',
+    date: 'March 15, 2026',
+    category: 'News',
+    excerpt: 'Detailed analysis of the latest category-based selections and what they mean for skilled workers.',
+    image: '🇨🇦'
+  },
+  {
+    title: 'Australia Skilled Migration Points Guide',
+    date: 'March 10, 2026',
+    category: 'Guide',
+    excerpt: 'How to maximize your points for the subclass 189 and 190 visas in the current competitive landscape.',
+    image: '🇦🇺'
+  },
+  {
+    title: 'Preparing for Your Student Visa Interview',
+    date: 'March 05, 2026',
+    category: 'Tips',
+    excerpt: 'Top 10 most common questions and how to answer them confidently to secure your study permit.',
+    image: '🎓'
+  },
+  {
+    title: 'The Rise of Digital Nomad Visas in 2026',
+    date: 'February 28, 2026',
+    category: 'Trends',
+    excerpt: 'Which countries offer the best options for remote workers looking for a new home.',
+    image: '💻'
+  }
+];
+---
+
+<MainLayout title="Blog & Resources" description="Stay updated with the latest immigration news, guides, and tips.">
+  <section class="page-header section-padding">
+    <div class="container text-center">
+      <h1>Resources & Insights</h1>
+      <p class="subtitle">Expert knowledge to help you navigate the ever-changing landscape of global immigration.</p>
+    </div>
+  </section>
+
+  <section class="blog-grid-section section-padding">
+    <div class="container">
+      <div class="blog-grid">
+        {posts.map(post => (
+          <article class="blog-card glass">
+            <div class="post-thumb flex-center">{post.image}</div>
+            <div class="post-content">
+              <div class="post-meta">
+                <span class="category">{post.category}</span>
+                <span class="divider">•</span>
+                <span class="date">{post.date}</span>
+              </div>
+              <h3>{post.title}</h3>
+              <p>{post.excerpt}</p>
+              <a href="#" class="read-more">Read Full Article &rarr;</a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="newsletter section-padding">
+    <div class="container glass-form text-center">
+      <h2>Subscribe to Immigration Updates</h2>
+      <p>Stay informed about policy changes and new visa opportunities directly in your inbox.</p>
+      <form class="news-form flex-center">
+        <input type="email" placeholder="Your email address" required />
+        <button type="submit" class="btn btn-gold">Subscribe</button>
+      </form>
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+  .page-header {
+    background-color: var(--primary-color);
+    color: var(--white);
+  }
+
+  .page-header h1 { color: var(--white); }
+  
+  .subtitle {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: var(--gray-light);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+  }
+
+  .blog-card {
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--gray-light);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .post-thumb {
+    height: 200px;
+    background: #F3F4F6;
+    font-size: 4rem;
+  }
+
+  .post-content { padding: 30px; }
+
+  .post-meta {
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+  }
+
+  .category { color: var(--accent-gold); text-transform: uppercase; }
+  .date { color: #6B7280; }
+  .divider { margin: 0 10px; }
+
+  .post-content h3 { margin-bottom: 15px; font-size: 1.4rem; }
+  .post-content p { color: #4B5563; font-size: 0.95rem; margin-bottom: 25px; line-height: 1.6; }
+
+  .read-more { font-weight: 700; color: var(--primary-color); }
+  .read-more:hover { color: var(--accent-gold); }
+
+  .glass-form {
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 60px;
+    border-radius: 20px;
+  }
+
+  .newsletter h2 { color: var(--white); margin-bottom: 15px; }
+  .newsletter p { margin-bottom: 35px; color: var(--gray-light); }
+
+  .news-form { gap: 15px; max-width: 500px; margin: 0 auto; }
+  .news-form input {
+    flex: 1;
+    padding: 12px 20px;
+    border-radius: 50px;
+    border: none;
+    font-family: inherit;
+  }
+
+  @media (max-width: 600px) {
+    .news-form { flex-direction: column; }
+    .news-form input { width: 100%; }
+  }
+</style>

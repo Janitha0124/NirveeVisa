@@ -1,0 +1,99 @@
+---
+interface Props {
+  title: string;
+  subtitle: string;
+  ctaText: string;
+  ctaLink: string;
+}
+
+const { title, subtitle, ctaText, ctaLink } = Astro.props;
+---
+
+<section class="hero">
+  <div class="overlay"></div>
+  <div class="container hero-content">
+    <h1 class="hero-title">{title}</h1>
+    <p class="hero-subtitle">{subtitle}</p>
+    <div class="hero-actions">
+      <a href={ctaLink} class="btn btn-gold">{ctaText}</a>
+      <a href="/services" class="btn btn-primary-outline">Learn More</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    height: 80vh;
+    min-height: 600px;
+    background-image: url('https://images.unsplash.com/photo-1436450412740-6b988f486c6b?q=80&w=2070&auto=format&fit=crop'); /* Professional global travel background */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: var(--white);
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(11, 31, 75, 0.8), rgba(30, 58, 138, 0.6));
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 10;
+    max-width: 800px;
+  }
+
+  .hero-title {
+    color: var(--white);
+    font-size: 4rem;
+    margin-bottom: 25px;
+    animation: fadeInUp 0.8s ease-out;
+  }
+
+  .hero-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 40px;
+    color: var(--gray-light);
+    animation: fadeInUp 0.8s ease-out 0.2s backwards;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 20px;
+    animation: fadeInUp 0.8s ease-out 0.4s backwards;
+  }
+
+  .btn-primary-outline {
+    background: transparent;
+    border: 2px solid var(--white);
+    color: var(--white);
+  }
+
+  .btn-primary-outline:hover {
+    background: var(--white);
+    color: var(--primary-color);
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero-title { font-size: 2.8rem; }
+    .hero-subtitle { font-size: 1.1rem; }
+    .hero-actions { flex-direction: column; }
+  }
+</style>

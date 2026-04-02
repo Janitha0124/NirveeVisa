@@ -1,0 +1,84 @@
+---
+---
+
+<form class="contact-form">
+  <div class="form-group">
+    <label for="name">Full Name</label>
+    <input type="text" id="name" name="name" placeholder="John Doe" required />
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email Address</label>
+    <input type="email" id="email" name="email" placeholder="john@example.com" required />
+  </div>
+
+  <div class="form-group">
+    <label for="service">Select Service</label>
+    <select id="service" name="service" required>
+      <option value="">Choose a service</option>
+      <option value="work">Work Visa</option>
+      <option value="study">Study Visa</option>
+      <option value="family">Family Visa</option>
+      <option value="tourist">Tourist Visa</option>
+      <option value="other">Other Inquiry</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="message">Your Message</label>
+    <textarea id="message" name="message" rows="5" placeholder="Tell us about your immigration goals..." required></textarea>
+  </div>
+
+  <button type="submit" class="btn btn-gold w-full">Send Message</button>
+</form>
+
+<style>
+  .contact-form {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--primary-color);
+  }
+
+  input, select, textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--gray-light);
+    border-radius: 50px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: var(--transition);
+  }
+
+  textarea {
+    border-radius: 20px;
+  }
+
+  input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--accent-gold);
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+  }
+
+  .w-full {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  @media (max-width: 600px) {
+    .contact-form {
+      padding: 25px;
+    }
+  }
+</style>

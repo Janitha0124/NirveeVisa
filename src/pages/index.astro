@@ -1,11 +1,160 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import MainLayout from '../layouts/MainLayout.astro';
+import Hero from '../components/Hero.astro';
+import ServiceCard from '../components/ServiceCard.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const services = [
+  {
+    icon: '🏢',
+    title: 'Work Visas',
+    description: 'Expert assistance for skilled worker visas and employment sponsors globally.',
+    link: '/visa#work'
+  },
+  {
+    icon: '🎓',
+    title: 'Study Visas',
+    description: 'Complete guidance for international students to top universities worldwide.',
+    link: '/visa#study'
+  },
+  {
+    icon: '🏠',
+    title: 'Family Visas',
+    description: 'Reuniting families with spouse, child, and parent visa applications.',
+    link: '/visa#family'
+  },
+  {
+    icon: '✈️',
+    title: 'Tourist Visas',
+    description: 'Fast and reliable visitor visa processing for over 50+ countries.',
+    link: '/visa#tourist'
+  }
+];
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<MainLayout title="Home" description="Professional immigration and visa consultancy services tailored for your global journey.">
+  
+  <Hero 
+    title="Your Gateway to Global Opportunities" 
+    subtitle="Let our expert immigration consultants guide you through the complex visa processes with ease and precision."
+    ctaText="Start Your Journey"
+    ctaLink="/eligibility"
+  />
+
+  <section class="services section-padding">
+    <div class="container">
+      <div class="section-header text-center">
+        <h2>Our Expert Services</h2>
+        <p>Comprehensive solutions for all your immigration and visa needs.</p>
+      </div>
+      <div class="grid service-grid">
+        {services.map(service => (
+          <ServiceCard {...service} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section section-padding">
+    <div class="container glass-cta">
+      <div class="cta-content">
+        <h2>Unsure about your eligibility?</h2>
+        <p>Take our quick eligibility assessment and find out which visa category suits you best.</p>
+        <a href="/eligibility" class="btn btn-gold">Check My Eligibility Now</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats section-padding">
+    <div class="container stat-grid">
+      <div class="stat-item">
+        <span class="stat-number">10+</span>
+        <span class="stat-label">Years Experience</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">5K+</span>
+        <span class="stat-label">Successful Visas</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">50+</span>
+        <span class="stat-label">Countries Support</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">98%</span>
+        <span class="stat-label">Success Rate</span>
+      </div>
+    </div>
+  </section>
+
+</MainLayout>
+
+<style>
+  .section-header {
+    max-width: 700px;
+    margin: 0 auto 60px;
+  }
+
+  .section-header h2 {
+    margin-bottom: 20px;
+  }
+
+  .section-header p {
+    color: #4B5563;
+    font-size: 1.1rem;
+  }
+
+  .service-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+
+  .cta-section {
+    background-color: var(--primary-color);
+    text-align: center;
+    color: var(--white);
+    padding: 60px 0;
+  }
+
+  .glass-cta {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 60px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .cta-content h2 {
+    color: var(--white);
+    margin-bottom: 20px;
+  }
+
+  .cta-content p {
+    margin-bottom: 30px;
+    font-size: 1.2rem;
+    color: var(--gray-light);
+  }
+
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    text-align: center;
+    gap: 30px;
+  }
+
+  .stat-number {
+    display: block;
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--accent-gold);
+    margin-bottom: 10px;
+  }
+
+  .stat-label {
+    font-weight: 600;
+    color: var(--primary-color);
+  }
+
+  @media (max-width: 768px) {
+    .stat-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+</style>

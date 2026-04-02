@@ -1,0 +1,73 @@
+---
+interface Props {
+  icon: string;
+  title: string;
+  description: string;
+  link: string;
+}
+
+const { icon, title, description, link } = Astro.props;
+---
+
+<div class="service-card">
+  <div class="icon-wrapper">
+    <span>{icon}</span>
+  </div>
+  <h3>{title}</h3>
+  <p>{description}</p>
+  <a href={link} class="link-more">Learn More &rarr;</a>
+</div>
+
+<style>
+  .service-card {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: var(--transition);
+    border: 1px solid var(--gray-light);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .service-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-gold);
+    box-shadow: 0 20px 40px rgba(11, 31, 75, 0.1);
+  }
+
+  .icon-wrapper {
+    background: rgba(212, 175, 55, 0.1);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    font-size: 1.5rem;
+    color: var(--accent-gold);
+  }
+
+  h3 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+  }
+
+  p {
+    color: #4B5563;
+    margin-bottom: 25px;
+    font-size: 1rem;
+  }
+
+  .link-more {
+    font-weight: 600;
+    color: var(--secondary-color);
+  }
+
+  .link-more:hover {
+    color: var(--accent-gold);
+    margin-left: 5px;
+  }
+</style>

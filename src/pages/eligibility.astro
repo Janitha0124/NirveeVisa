@@ -1,0 +1,151 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+---
+
+<MainLayout title="Eligibility Check" description="Take our free assessment to determine your immigration options.">
+  <section class="page-header section-padding">
+    <div class="container text-center">
+      <h1>Free Eligibility Assessment</h1>
+      <p class="subtitle">Complete this simple form to understand your visa options and get expert recommendations.</p>
+    </div>
+  </section>
+
+  <section class="assessment-section section-padding">
+    <div class="container narrow-container">
+      <div class="assessment-card glass">
+        <div class="form-progress">
+          <div class="step active">1</div>
+          <div class="line"></div>
+          <div class="step">2</div>
+          <div class="line"></div>
+          <div class="step">3</div>
+        </div>
+
+        <form id="eligibility-form" class="assess-form">
+          <div class="step-content" id="step-1">
+            <h3>Personal Information</h3>
+            <div class="grid-2-form">
+              <div class="form-group">
+                <label>First Name</label>
+                <input type="text" placeholder="First Name" required />
+              </div>
+              <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" placeholder="Last Name" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Email Address</label>
+              <input type="email" placeholder="Email" required />
+            </div>
+            <div class="form-group">
+              <label>Age</label>
+              <input type="number" min="18" max="100" placeholder="Your Age" required />
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="button" class="btn btn-gold w-full" id="next-btn">Next Step &rarr;</button>
+          </div>
+        </form>
+
+        <div class="disclaimer">
+          <p><strong>Note:</strong> This assessment is for preliminary information purposes only and does not constitute a formal legal assessment. All information provided is kept strictly confidential.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+  .page-header {
+    background-color: var(--primary-color);
+    color: var(--white);
+  }
+
+  .page-header h1 { color: var(--white); }
+  
+  .subtitle {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: var(--gray-light);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .narrow-container { max-width: 700px; }
+
+  .assessment-card {
+    background: var(--white);
+    padding: 60px;
+    border-radius: 20px;
+    box-shadow: 0 15px 45px rgba(0,0,0,0.1);
+    border: 1px solid var(--gray-light);
+  }
+
+  .form-progress {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 50px;
+  }
+
+  .step {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--gray-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: var(--text-dark);
+  }
+
+  .step.active {
+    background: var(--accent-gold);
+    color: var(--primary-color);
+  }
+
+  .line {
+    width: 50px;
+    height: 2px;
+    background: var(--gray-light);
+  }
+
+  .step-content h3 { margin-bottom: 30px; text-align: center; }
+
+  .grid-2-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .form-group { margin-bottom: 20px; }
+  label { display: block; margin-bottom: 8px; font-weight: 600; color: var(--primary-color); }
+  input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--gray-light);
+    border-radius: 50px;
+    font-family: inherit;
+  }
+
+  .w-full { width: 100%; }
+
+  .disclaimer {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--gray-light);
+    color: #6B7280;
+    font-size: 0.85rem;
+    text-align: center;
+  }
+
+  @media (max-width: 600px) {
+    .assessment-card { padding: 30px; }
+    .grid-2-form { grid-template-columns: 1fr; }
+  }
+</style>

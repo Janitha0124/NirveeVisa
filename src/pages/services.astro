@@ -1,0 +1,148 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+
+const allServices = [
+  {
+    icon: '🏢',
+    title: 'Skilled Migration',
+    description: 'Points-based visa systems for professionals seeking permanent residency.',
+    link: '/visa#skilled'
+  },
+  {
+    icon: '🎓',
+    title: 'Student Visa',
+    description: 'End-to-end support from university admission to visa grant.',
+    link: '/visa#student'
+  },
+  {
+    icon: '👪',
+    title: 'Family Reunification',
+    description: 'Bringing loved ones together through spouse, child and dependent visas.',
+    link: '/visa#family'
+  },
+  {
+    icon: '💼',
+    title: 'Business & Investment',
+    description: 'Strategic visa solutions for entrepreneurs and high-value investors.',
+    link: '/visa#business'
+  },
+  {
+    icon: '⚖️',
+    title: 'Legal Consultations',
+    description: 'Professional legal advice for complex immigration matters and appeals.',
+    link: '/contact'
+  },
+  {
+    icon: '📝',
+    title: 'Document Review',
+    description: 'Thorough auditing of your application documents for error-free submission.',
+    link: '/contact'
+  }
+];
+---
+
+<MainLayout title="Services" description="Explore our wide range of immigration and visa services.">
+  <section class="page-header section-padding">
+    <div class="container text-center">
+      <h1>Customized Immigration Solutions</h1>
+      <p class="subtitle">Whatever your destination or purpose, we have the expertise to get you there.</p>
+    </div>
+  </section>
+
+  <section class="services-list section-padding">
+    <div class="container">
+      <div class="grid services-grid">
+        {allServices.map(service => (
+          <ServiceCard {...service} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="process section-padding bg-primary">
+    <div class="container">
+      <h2 class="text-center white-text">Our 4-Step Success Process</h2>
+      <div class="process-grid">
+        <div class="process-step">
+          <div class="step-num">1</div>
+          <h3 class="white-text">Consultation</h3>
+          <p>Initial assessment of your profile and goals.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">2</div>
+          <h3 class="white-text">Strategy</h3>
+          <p>Defining the best visa path for your specific needs.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">3</div>
+          <h3 class="white-text">Documentation</h3>
+          <p>Meticulous collection and review of required materials.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">4</div>
+          <h3 class="white-text">Submission</h3>
+          <p>Expert filing and following up with authorities.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+  .page-header {
+    background-color: var(--primary-color);
+    color: var(--white);
+  }
+
+  .page-header h1 { color: var(--white); }
+  
+  .subtitle {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: var(--gray-light);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+  }
+
+  .bg-primary { background-color: var(--primary-color); }
+  .white-text { color: var(--white); }
+
+  .process-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-top: 60px;
+  }
+
+  .process-step {
+    text-align: center;
+    color: var(--gray-light);
+  }
+
+  .step-num {
+    width: 60px;
+    height: 60px;
+    background-color: var(--accent-gold);
+    color: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin: 0 auto 25px;
+  }
+
+  .process-step h3 { margin-bottom: 15px; }
+
+  @media (max-width: 768px) {
+    .process-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>

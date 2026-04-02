@@ -1,0 +1,131 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+
+const faqs = [
+  {
+    q: 'How long does the immigration process typically take?',
+    a: 'Processing times vary significantly depending on the country and visa category. Generally, skilled migration can take 6-18 months, while student visas often take 2-4 months. We provide specific estimates during your consultation.'
+  },
+  {
+    q: 'Do you guarantee visa approval?',
+    a: 'While no reputable consultant can "guarantee" a visa (as final decisions rest with government authorities), our 98% success rate reflects our thorough vetting process. If we don’t believe your case is strong, we will tell you upfront.'
+  },
+  {
+    q: 'What are the main costs involved in immigration?',
+    a: 'Costs typically include government application fees, medical examinations, English language tests (if required), document translation, and our professional service fees. We provide a full cost breakdown before you start.'
+  },
+  {
+    q: 'Can I include my family in my application?',
+    a: 'Most skilled and work visa categories allow you to include immediate family members (spouse and dependent children). Some countries also have specific pathways for parents.'
+  },
+  {
+    q: 'Do I need an immigration consultant?',
+    a: 'While you can apply on your own, a consultant ensures your application is error-free, meets current policy requirements, and follows the strongest possible strategy, significantly reducing risk and stress.'
+  }
+];
+---
+
+<MainLayout title="Frequently Asked Questions" description="Find answers to common questions about immigration and visa processes.">
+  <section class="page-header section-padding">
+    <div class="container text-center">
+      <h1>Got Questions? We Have Answers</h1>
+      <p class="subtitle">Find helpful information about the immigration journey and our services.</p>
+    </div>
+  </section>
+
+  <section class="faq-section section-padding">
+    <div class="container narrow-container">
+      <div class="faq-list">
+        {faqs.map((faq, index) => (
+          <div class="faq-item glass">
+            <details>
+              <summary>
+                <span>{faq.q}</span>
+                <span class="plus">+</span>
+              </summary>
+              <div class="faq-answer">
+                <p>{faq.a}</p>
+              </div>
+            </details>
+          </div>
+        ))}
+      </div>
+
+      <div class="still-questions text-center">
+        <h3>Still have questions?</h3>
+        <p>Our consultants are ready to provide personalized answers for your specific case.</p>
+        <a href="/contact" class="btn btn-primary">Contact Our Team</a>
+      </div>
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+  .page-header {
+    background-color: var(--primary-color);
+    color: var(--white);
+  }
+
+  .page-header h1 { color: var(--white); }
+  
+  .subtitle {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: var(--gray-light);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .narrow-container { max-width: 800px; }
+
+  .faq-list { margin-bottom: 60px; }
+
+  .faq-item {
+    margin-bottom: 20px;
+    border-radius: 12px;
+    border: 1px solid var(--gray-light);
+    overflow: hidden;
+  }
+
+  summary {
+    padding: 25px;
+    list-style: none;
+    cursor: pointer;
+    font-weight: 700;
+    color: var(--primary-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--white);
+    transition: var(--transition);
+  }
+
+  summary:hover { background: #F9FAFB; }
+
+  summary::-webkit-details-marker { display: none; }
+
+  .faq-answer {
+    padding: 0 25px 25px;
+    background: var(--white);
+    color: #4B5563;
+    line-height: 1.7;
+  }
+
+  .plus {
+    color: var(--accent-gold);
+    font-size: 1.5rem;
+    transition: var(--transition);
+  }
+
+  details[open] .plus { transform: rotate(45deg); }
+
+  .still-questions {
+    padding: 60px;
+    background: var(--gray-light);
+    border-radius: 20px;
+  }
+
+  .still-questions h3 { margin-bottom: 15px; }
+  .still-questions p { margin-bottom: 30px; color: #4B5563; }
+</style>

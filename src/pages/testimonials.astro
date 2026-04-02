@@ -1,0 +1,101 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import TestimonialCard from '../components/TestimonialCard.astro';
+
+const testimonials = [
+  {
+    name: 'James Wilson',
+    role: 'Canada Skilled Migrant',
+    content: 'The team at ImmigraSite made my Express Entry process so smooth. Their attention to detail in document review was the key to my success.',
+    image: '👨‍💼'
+  },
+  {
+    name: 'Priya Sharma',
+    role: 'Australia Student Visa',
+    content: 'I highly recommend their student visa services. They helped me choose the right course and handled all the paperwork professionally.',
+    image: '👩‍🎓'
+  },
+  {
+    name: 'Marco Rossi',
+    role: 'UK Business Investor',
+    content: 'Professional, reliable, and expert advice. They understood the complexities of my business migration case and delivered results.',
+    image: '👨‍💼'
+  },
+  {
+    name: 'Linda Chen',
+    role: 'Family Sponsorship Client',
+    content: 'Reuniting with my family in the USA seemed impossible until I met the experts at ImmigraSite. They guided us every step of the way.',
+    image: '👩‍💼'
+  },
+  {
+    name: 'Ahmed Hassan',
+    role: 'Germany Opportunity Card',
+    content: 'Their knowledge of the new German immigration laws is impressive. I got my Opportunity Card without any hassle.',
+    image: '👨‍💻'
+  },
+  {
+    name: 'Elena Petrov',
+    role: 'New Zealand Resident',
+    content: 'From the initial assessment to the final visa grant, the communication was excellent. A truly client-centric experience.',
+    image: '👩‍💼'
+  }
+];
+---
+
+<MainLayout title="Success Stories" description="Hear from our clients who have successfully migrated with our help.">
+  <section class="page-header section-padding">
+    <div class="container text-center">
+      <h1>What Our Clients Say</h1>
+      <p class="subtitle">Join thousands of successful individuals who have achieved their global dreams with us.</p>
+    </div>
+  </section>
+
+  <section class="testimonials-grid section-padding">
+    <div class="container">
+      <div class="grid-3">
+        {testimonials.map(t => (
+          <TestimonialCard {...t} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="success-ratio section-padding bg-primary">
+    <div class="container text-center">
+      <h2 class="white-text">98% Success Rate Across All Visa Categories</h2>
+      <p class="white-text subtitle">Our meticulous approach ensures your application stands the best chance of approval.</p>
+      <a href="/eligibility" class="btn btn-gold">Start Your Success Story</a>
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+  .page-header {
+    background-color: var(--primary-color);
+    color: var(--white);
+  }
+
+  .page-header h1 { color: var(--white); }
+  
+  .subtitle {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: var(--gray-light);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+  }
+
+  .bg-primary { background-color: var(--primary-color); }
+  .white-text { color: var(--white); }
+
+  @media (max-width: 768px) {
+    .grid-3 { grid-template-columns: 1fr; }
+  }
+</style>

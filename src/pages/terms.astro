@@ -1,0 +1,33 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+---
+
+<MainLayout title="Terms & Conditions">
+  <section class="legal-section section-padding">
+    <div class="container narrow-container">
+      <h1>Terms & Conditions</h1>
+      <p class="updated">Last Updated: April 2, 2026</p>
+      
+      <div class="content">
+        <p>By using our website, you agree to the following terms of service.</p>
+        
+        <h2>1. Services</h2>
+        <p>Immigrasite provides consultation services. Final visa decisions are made by the respective government authorities.</p>
+        
+        <h2>2. User Obligations</h2>
+        <p>Users must provide accurate and truthful information in all forms and assessments.</p>
+        
+        <h2>3. Limitation of Liability</h2>
+        <p>While we strive for success, we are not liable for visa rejections or delays caused by government processing.</p>
+      </div>
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+  .legal-section h1 { margin-bottom: 10px; }
+  .updated { color: #6B7280; font-size: 0.9rem; margin-bottom: 40px; }
+  .narrow-container { max-width: 800px; }
+  .content h2 { margin: 30px 0 15px; font-size: 1.5rem; }
+  .content p { margin-bottom: 20px; color: #4B5563; }
+</style>
