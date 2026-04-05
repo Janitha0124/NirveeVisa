@@ -1,88 +1,90 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
-import ServiceCard from '../components/ServiceCard.astro';
 
-const allServices = [
+const services = [
   {
     icon: '🏢',
-    title: 'Skilled Migration',
-    description: 'Points-based visa systems for professionals seeking permanent residency.',
-    link: '/visa#skilled'
+    title: 'Corporate Mobility',
+    description: 'Bespoke strategic mobility solutions designed specifically for multinational enterprises scaling their global footprint.',
   },
   {
     icon: '🎓',
-    title: 'Student Visa',
-    description: 'End-to-end support from university admission to visa grant.',
-    link: '/visa#student'
+    title: 'Elite Student Visas',
+    description: 'Premier academic transition support to secure placements in top-tier global institutions without bureaucratic friction.',
   },
   {
-    icon: '👪',
-    title: 'Family Reunification',
-    description: 'Bringing loved ones together through spouse, child and dependent visas.',
-    link: '/visa#family'
-  },
-  {
-    icon: '💼',
-    title: 'Business & Investment',
-    description: 'Strategic visa solutions for entrepreneurs and high-value investors.',
-    link: '/visa#business'
+    icon: '🌟',
+    title: 'Global Talent',
+    description: 'Fast-tracked, red-carpet routes for pioneers in STEM, arts, and business wishing to relocate to major global hubs.',
   },
   {
     icon: '⚖️',
-    title: 'Legal Consultations',
-    description: 'Professional legal advice for complex immigration matters and appeals.',
-    link: '/contact'
+    title: 'Strategic Consultation',
+    description: 'Rigorous legal roadmapping for complex immigration appeals, ensuring compliance and maximizing success rates.',
   },
   {
-    icon: '📝',
-    title: 'Document Review',
-    description: 'Thorough auditing of your application documents for error-free submission.',
-    link: '/contact'
+    icon: '🛡️',
+    title: 'Compliance Audits',
+    description: 'Meticulous review of corporate sponsorship frameworks to guarantee alignment with stringent global immigration laws.',
+  },
+  {
+    icon: '💼',
+    title: 'Investor Relocation',
+    description: 'Expedited residency and citizenship pathways via strategic high-value asset investment.',
   }
 ];
 ---
 
-<MainLayout title="Services" description="Explore our wide range of immigration and visa services.">
+<MainLayout title="Capabilities" description="Premium corporate and individual immigration capabilities.">
   <section class="page-header section-padding">
     <div class="container text-center">
-      <h1>Customized Immigration Solutions</h1>
-      <p class="subtitle">Whatever your destination or purpose, we have the expertise to get you there.</p>
+      <span class="gold-text uppercase-label">Our Capabilities</span>
+      <h1>Immigration Services</h1>
+      <p class="subtitle">We deliver white-glove, end-to-end immigration strategies tailored for elite professionals, investors, and elite corporations.</p>
     </div>
   </section>
 
   <section class="services-list section-padding">
     <div class="container">
       <div class="grid services-grid">
-        {allServices.map(service => (
-          <ServiceCard {...service} />
+        {services.map(service => (
+          <div class="glass-card service-card">
+            <div class="icon-wrapper">
+              <span>{service.icon}</span>
+            </div>
+            <h3>{service.title}</h3>
+            <p>{service.description}</p>
+          </div>
         ))}
       </div>
     </div>
   </section>
 
-  <section class="process section-padding bg-primary">
+  <section class="process section-padding bg-darker">
     <div class="container">
-      <h2 class="text-center white-text">Our 4-Step Success Process</h2>
+      <h2 class="text-center">The Nirvee Visa Methodology</h2>
+      <p class="text-center subtitle mb-60">A proprietary four-phase framework ensuring unparalleled precision.</p>
+      
       <div class="process-grid">
         <div class="process-step">
-          <div class="step-num">1</div>
-          <h3 class="white-text">Consultation</h3>
-          <p>Initial assessment of your profile and goals.</p>
+          <div class="step-num">01</div>
+          <h3>Strategic Consultation</h3>
+          <p>Initial executive assessment aligning your global mobility ambitions with legislative realities.</p>
         </div>
         <div class="process-step">
-          <div class="step-num">2</div>
-          <h3 class="white-text">Strategy</h3>
-          <p>Defining the best visa path for your specific needs.</p>
+          <div class="step-num">02</div>
+          <h3>Blueprint Creation</h3>
+          <p>Developing a bespoke, risk-mitigated roadmap for your specific jurisdictional target.</p>
         </div>
         <div class="process-step">
-          <div class="step-num">3</div>
-          <h3 class="white-text">Documentation</h3>
-          <p>Meticulous collection and review of required materials.</p>
+          <div class="step-num">03</div>
+          <h3>Rigorous Audit</h3>
+          <p>Meticulous documentation compilation and preemptive legal stress-testing of your portfolio.</p>
         </div>
         <div class="process-step">
-          <div class="step-num">4</div>
-          <h3 class="white-text">Submission</h3>
-          <p>Expert filing and following up with authorities.</p>
+          <div class="step-num">04</div>
+          <h3>Execution & Grant</h3>
+          <p>Seamless liaison with government bodies to secure a rapid and unencumbered approval.</p>
         </div>
       </div>
     </div>
@@ -91,58 +93,120 @@ const allServices = [
 
 <style>
   .page-header {
-    background-color: var(--primary-color);
-    color: var(--white);
+    background: linear-gradient(to bottom, var(--obsidian-light), var(--obsidian));
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 150px;
+    padding-bottom: 80px;
   }
 
-  .page-header h1 { color: var(--white); }
-  
+  .uppercase-label {
+    display: inline-block;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    font-size: 0.9rem;
+  }
+
   .subtitle {
     margin-top: 20px;
-    font-size: 1.2rem;
-    color: var(--gray-light);
+    font-size: 1.25rem;
+    color: var(--text-muted);
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
   }
+  
+  .mb-60 { margin-bottom: 60px; }
 
   .services-grid {
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 40px;
   }
 
-  .bg-primary { background-color: var(--primary-color); }
-  .white-text { color: var(--white); }
-
-  .process-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 30px;
-    margin-top: 60px;
+  .service-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
-  .process-step {
-    text-align: center;
-    color: var(--gray-light);
-  }
-
-  .step-num {
-    width: 60px;
-    height: 60px;
-    background-color: var(--accent-gold);
-    color: var(--primary-color);
-    border-radius: 50%;
+  .icon-wrapper {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(212, 175, 55, 0.05));
+    width: 64px;
+    height: 64px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.5rem;
-    font-weight: 800;
-    margin: 0 auto 25px;
+    border-radius: 12px;
+    margin-bottom: 24px;
+    font-size: 1.8rem;
+    color: var(--gold);
+    border: 1px solid rgba(212, 175, 55, 0.2);
   }
 
-  .process-step h3 { margin-bottom: 15px; }
+  .service-card h3 {
+    margin-bottom: 16px;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  .service-card p {
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
+
+  .bg-darker {
+    background-color: var(--obsidian-lighter);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .process-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 40px;
+    position: relative;
+  }
+
+  .process-step {
+    text-align: left;
+    position: relative;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: var(--transition);
+  }
+
+  .process-step:hover {
+    border-color: rgba(212, 175, 55, 0.3);
+    transform: translateY(-5px);
+  }
+
+  .step-num {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--gold);
+    opacity: 0.3;
+    line-height: 1;
+    margin-bottom: 20px;
+  }
+
+  .process-step h3 {
+    font-size: 1.3rem;
+    margin-bottom: 16px;
+  }
+
+  .process-step p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 0;
+  }
 
   @media (max-width: 768px) {
-    .process-grid { grid-template-columns: 1fr 1fr; }
+    .page-header { padding-top: 100px; }
+    .process-grid { grid-template-columns: 1fr; }
   }
 </style>

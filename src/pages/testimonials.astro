@@ -5,48 +5,49 @@ import TestimonialCard from '../components/TestimonialCard.astro';
 const testimonials = [
   {
     name: 'James Wilson',
-    role: 'Canada Skilled Migrant',
-    content: 'The team at ImmigraSite made my Express Entry process so smooth. Their attention to detail in document review was the key to my success.',
+    role: 'Corporate Executive Route',
+    content: 'The senior strategists at Nirvee Visa navigated my complex intra-company transfer with absolute precision. Their attention to detail in document preparation was the key to an expedited process.',
     image: '👨‍💼'
   },
   {
     name: 'Priya Sharma',
-    role: 'Australia Student Visa',
-    content: 'I highly recommend their student visa services. They helped me choose the right course and handled all the paperwork professionally.',
-    image: '👩‍🎓'
-  },
-  {
-    name: 'Marco Rossi',
-    role: 'UK Business Investor',
-    content: 'Professional, reliable, and expert advice. They understood the complexities of my business migration case and delivered results.',
-    image: '👨‍💼'
-  },
-  {
-    name: 'Linda Chen',
-    role: 'Family Sponsorship Client',
-    content: 'Reuniting with my family in the USA seemed impossible until I met the experts at ImmigraSite. They guided us every step of the way.',
+    role: 'Global Talent Visa',
+    content: 'Unparalleled professionalism. They understood the nuances of the Global Talent route and structured my portfolio to highlight my achievements flawlessly.',
     image: '👩‍💼'
   },
   {
+    name: 'Marco Rossi',
+    role: 'Tier 1 Investor Visa',
+    content: 'As an investor, discretion and speed are paramount. The team delivered a bespoke service that exceeded my highest expectations. A truly elite consultancy.',
+    image: '🥂'
+  },
+  {
+    name: 'Linda Chen',
+    role: 'Family Sponsorship Route',
+    content: 'Reuniting with my family seemed daunting given legislative changes, but the experts at Nirvee Visa mapped out a secure, successful path forward.',
+    image: '👩‍⚕️'
+  },
+  {
     name: 'Ahmed Hassan',
-    role: 'Germany Opportunity Card',
-    content: 'Their knowledge of the new German immigration laws is impressive. I got my Opportunity Card without any hassle.',
+    role: 'EU Blue Card',
+    content: 'Their mastery of European immigration frameworks is impressive. I secured my Blue Card without any of the usual bureaucratic friction.',
     image: '👨‍💻'
   },
   {
     name: 'Elena Petrov',
-    role: 'New Zealand Resident',
-    content: 'From the initial assessment to the final visa grant, the communication was excellent. A truly client-centric experience.',
-    image: '👩‍💼'
+    role: 'Permanent Residency',
+    content: 'From the initial strategic assessment to the final visa grant, the communication was immaculate. A premier, client-centric experience from start to finish.',
+    image: '👩‍🏫'
   }
 ];
 ---
 
-<MainLayout title="Success Stories" description="Hear from our clients who have successfully migrated with our help.">
+<MainLayout title="Testimonials" description="Hear from elite clients who have successfully expanded their global footprint with our expertise.">
   <section class="page-header section-padding">
     <div class="container text-center">
-      <h1>What Our Clients Say</h1>
-      <p class="subtitle">Join thousands of successful individuals who have achieved their global dreams with us.</p>
+      <span class="gold-text uppercase-label drop-shadow">Client Success</span>
+      <h1>Testimonials</h1>
+      <p class="subtitle">Join the distinguished individuals and corporations who trust us with their global mobility.</p>
     </div>
   </section>
 
@@ -60,27 +61,30 @@ const testimonials = [
     </div>
   </section>
 
-  <section class="success-ratio section-padding bg-primary">
-    <div class="container text-center">
-      <h2 class="white-text">98% Success Rate Across All Visa Categories</h2>
-      <p class="white-text subtitle">Our meticulous approach ensures your application stands the best chance of approval.</p>
-      <a href="/eligibility" class="btn btn-gold">Start Your Success Story</a>
-    </div>
-  </section>
 </MainLayout>
 
 <style>
   .page-header {
-    background-color: var(--primary-color);
-    color: var(--white);
+    background: linear-gradient(to bottom, var(--obsidian-light), var(--obsidian));
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 150px;
+    padding-bottom: 80px;
   }
 
-  .page-header h1 { color: var(--white); }
-  
+  .uppercase-label {
+    display: inline-block;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    font-size: 0.9rem;
+  }
+
   .subtitle {
     margin-top: 20px;
-    font-size: 1.2rem;
-    color: var(--gray-light);
+    font-size: 1.25rem;
+    color: var(--text-muted);
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
@@ -89,13 +93,10 @@ const testimonials = [
   .grid-3 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 40px;
+    gap: 32px;
   }
 
-  .bg-primary { background-color: var(--primary-color); }
-  .white-text { color: var(--white); }
-
   @media (max-width: 768px) {
-    .grid-3 { grid-template-columns: 1fr; }
+    .page-header { padding-top: 100px; }
   }
 </style>

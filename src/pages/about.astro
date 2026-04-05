@@ -2,65 +2,68 @@
 import MainLayout from '../layouts/MainLayout.astro';
 
 const team = [
-  { name: 'Sarah Johnson', role: 'Chief Immigration Officer', image: '👩‍💼' },
-  { name: 'Michael Chen', role: 'Senior Visa Consultant', image: '👨‍💼' },
-  { name: 'Emma Williams', role: 'Student Visa Specialist', image: '👩‍💼' },
-  { name: 'David Smith', role: 'Business Migration Expert', image: '👨‍💼' }
+  { name: 'Dr. Sarah Johnson', role: 'Managing Partner', image: '👩‍💼' },
+  { name: 'Michael Chen, Esq.', role: 'Head of Corporate Mobility', image: '👨‍💼' },
+  { name: 'Emma Williams', role: 'Director, Investor Visas', image: '👩‍💼' },
+  { name: 'David Smith', role: 'Senior Global Strategist', image: '👨‍💼' }
 ];
 ---
 
-<MainLayout title="About Us">
+<MainLayout title="About Us" description="Discover the elite firm behind thousands of successful global transitions.">
   <section class="page-header section-padding">
     <div class="container text-center">
-      <h1>Leading the Way in Global Mobility</h1>
-      <p class="subtitle">With over a decade of experience, we've helped thousands of individuals and families find their new home through expert immigration guidance.</p>
+      <span class="gold-text uppercase-label">The Firm</span>
+      <h1>Excellence in Global Mobility</h1>
+      <p class="subtitle">A distinguished consultancy empowering elite professionals, investors, and tier-one corporations to transcend borders effortlessly.</p>
     </div>
   </section>
 
   <section class="about-content section-padding">
     <div class="container grid-2">
       <div class="about-text">
-        <h2>Our Mission</h2>
-        <p>At ImmigraSite, our mission is simple: to make the complex world of immigration accessible and straightforward. We believe that global mobility should be a transparent and empowering experience for everyone.</p>
-        <p>Our team of dedicated professionals stays at the forefront of changing immigration laws and policies to ensure your application has the highest chance of success.</p>
+        <h2 class="gold-text">Our Philosophy</h2>
+        <p class="lead">At Nirvee Visa Premium Consulting, we view global mobility not as a bureaucratic hurdle, but as a strategic asset.</p>
+        <p>Our mandate is to dismantle the complexities of international relocation. By fusing profound legislative acumen with a white-glove advisory approach, we curate unparalleled immigration strategies that guarantee precision, absolute discretion, and flawless execution.</p>
         
-        <div class="values">
+        <div class="values mt-40">
           <div class="value-item">
-            <span class="value-icon">✓</span>
+            <div class="value-icon">✧</div>
             <div>
-              <h4>Integrity First</h4>
-              <p>We provide honest assessments and realistic expectations from day one.</p>
+              <h4 class="gold-text">Unyielding Discretion</h4>
+              <p>We manage high-profile cases with absolute confidentiality and supreme professionalism.</p>
             </div>
           </div>
           <div class="value-item">
-            <span class="value-icon">✓</span>
+            <div class="value-icon">✧</div>
             <div>
-              <h4>Client Centric</h4>
-              <p>Every case is unique, and we tailor our approach to your specific goals.</p>
+              <h4 class="gold-text">Bespoke Strategy</h4>
+              <p>Abandoning the "one-size-fits-all" model for meticulous, tailored legal frameworks.</p>
             </div>
           </div>
         </div>
       </div>
-      <div class="about-image glass">
-        <!-- Placeholder for professional office image -->
-        <div class="image-placeholder flex-center">
-          <span>Trust & Expertise</span>
+      <div class="about-image glass-card p-0">
+        <div class="image-placeholder">
+          <span class="placeholder-text">Unparalleled Authority</span>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="team section-padding bg-light">
+  <section class="team section-padding bg-darker">
     <div class="container text-center">
-      <h2>Meet Our Experts</h2>
-      <p class="section-subtitle">Dedicated professionals committed to your success.</p>
+      <span class="gold-text uppercase-label">Leadership</span>
+      <h2>Our Senior Strategists</h2>
+      <p class="subtitle mb-60">Pioneers in global immigration law and corporate mobility.</p>
       
       <div class="team-grid">
         {team.map(member => (
           <div class="team-card">
             <div class="team-avatar">{member.image}</div>
-            <h3>{member.name}</h3>
-            <p>{member.role}</p>
+            <div class="team-info">
+              <h3>{member.name}</h3>
+              <p class="gold-text">{member.role}</p>
+            </div>
           </div>
         ))}
       </div>
@@ -70,88 +73,138 @@ const team = [
 
 <style>
   .page-header {
-    background-color: var(--primary-color);
-    color: var(--white);
+    background: linear-gradient(to bottom, var(--obsidian-light), var(--obsidian));
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 150px;
+    padding-bottom: 80px;
   }
 
-  .page-header h1 { color: var(--white); }
-  
+  .uppercase-label {
+    display: inline-block;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    font-size: 0.9rem;
+  }
+
   .subtitle {
     margin-top: 20px;
-    font-size: 1.2rem;
-    color: var(--gray-light);
-    max-width: 800px;
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    max-width: 700px;
     margin-left: auto;
     margin-right: auto;
   }
 
   .grid-2 {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 80px;
     align-items: center;
   }
 
-  .about-text h2 { margin-bottom: 25px; }
-  .about-text p { margin-bottom: 20px; color: #4B5563; }
+  .about-text h2 { margin-bottom: 30px; font-size: 2.5rem; }
+  .about-text p { margin-bottom: 24px; color: var(--text-muted); font-size: 1.1rem; }
+  .about-text .lead { color: var(--text-main); font-size: 1.35rem; font-weight: 300; }
 
-  .values { margin-top: 40px; }
+  .mt-40 { margin-top: 50px; }
+
   .value-item {
     display: flex;
-    gap: 20px;
+    gap: 24px;
     margin-bottom: 30px;
+    align-items: flex-start;
   }
 
   .value-icon {
-    background: var(--accent-gold);
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
+    font-size: 1.5rem;
+    color: var(--gold);
+    flex-shrink: 0;
+    line-height: 1;
+    margin-top: 4px;
+  }
+
+  .value-item h4 { margin-bottom: 8px; font-size: 1.2rem; }
+  .value-item p { margin-bottom: 0; font-size: 1rem; }
+
+  .p-0 { padding: 0 !important; overflow: hidden; border-radius: 12px; }
+
+  .image-placeholder {
+    height: 500px;
+    background: linear-gradient(135deg, rgba(10, 10, 10, 0.8), rgba(59, 130, 246, 0.1));
+    background-size: cover;
+    background-position: center;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--primary-color);
-    font-weight: bold;
-    flex-shrink: 0;
   }
 
-  .value-item h4 { margin-bottom: 5px; }
-
-  .image-placeholder {
-    height: 400px;
-    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
-    border-radius: 20px;
-    color: var(--accent-gold);
-    font-size: 1.5rem;
-    font-weight: bold;
+  .placeholder-text {
+    background: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 16px 32px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    color: var(--gold);
+    font-family: var(--font-heading);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    border-radius: 4px;
   }
 
-  .bg-light { background-color: #F9FAFB; }
+  .bg-darker {
+    background-color: var(--obsidian-lighter);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+  }
 
-  .section-subtitle { margin-bottom: 50px; color: #4B5563; }
+  .mb-60 { margin-bottom: 60px; }
 
   .team-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
   }
 
   .team-card {
-    background: var(--white);
-    padding: 30px;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    overflow: hidden;
+    transition: var(--transition);
+  }
+
+  .team-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(212, 175, 55, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
   }
 
   .team-avatar {
-    font-size: 3rem;
-    margin-bottom: 20px;
+    height: 250px;
+    background: rgba(212, 175, 55, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   }
 
-  .team-card h3 { font-size: 1.25rem; margin-bottom: 10px; }
-  .team-card p { color: var(--secondary-color); font-weight: 500; font-size: 0.9rem; }
+  .team-info {
+    padding: 30px;
+  }
+
+  .team-card h3 { font-size: 1.3rem; margin-bottom: 8px; }
+  .team-card p { font-weight: 500; font-size: 0.9rem; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 0; }
 
   @media (max-width: 992px) {
     .grid-2 { grid-template-columns: 1fr; }
+    .image-placeholder { height: 400px; }
+  }
+
+  @media (max-width: 768px) {
+    .page-header { padding-top: 100px; }
   }
 </style>

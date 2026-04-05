@@ -3,59 +3,48 @@ import MainLayout from '../layouts/MainLayout.astro';
 import ContactForm from '../components/ContactForm.astro';
 ---
 
-<MainLayout title="Contact Us" description="Get in touch with our expert immigration consultants for personalized advice.">
+<MainLayout title="Contact Us" description="Schedule a private consultation with our senior immigration strategists.">
   <section class="page-header section-padding">
     <div class="container text-center">
-      <h1>Contact Our Experts</h1>
-      <p class="subtitle">We're here to answer your questions and guide you through your immigration journey.</p>
+      <span class="gold-text uppercase-label drop-shadow">Inquiries</span>
+      <h1>Request Consultation</h1>
+      <p class="subtitle">Engage with our senior advisory team to define your bespoke global mobility strategy.</p>
     </div>
   </section>
 
   <section class="contact-section section-padding">
     <div class="container grid-2">
       <div class="contact-info">
-        <h2>Reach Out Today</h2>
-        <p>Whether you have a quick question or need a full consultation, our team is ready to help you.</p>
+        <h2 class="gold-text">Global Headquarters</h2>
+        <p class="lead">We maintain absolute discretion for all inquiries. Select the most convenient channel below, or submit our secure portal form.</p>
         
-        <div class="info-blocks">
+        <div class="info-blocks mt-40">
           <div class="info-item">
-            <span class="icon">📍</span>
+            <div class="icon-wrapper">
+              <span class="icon">⌂</span>
+            </div>
             <div>
-              <h4>Our Office</h4>
-              <p>123 Immigration Way, New York, NY 10001</p>
+              <h4 class="gold-text">Corporate Office</h4>
+              <p>123 Obsidian Tower, Suite 400<br/>New York, NY 10001</p>
             </div>
           </div>
           <div class="info-item">
-            <span class="icon">📞</span>
+            <div class="icon-wrapper">
+              <span class="icon">✆</span>
+            </div>
             <div>
-              <h4>Phone Number</h4>
+              <h4 class="gold-text">Direct Line</h4>
               <p>+1 (234) 567-890</p>
             </div>
           </div>
           <div class="info-item">
-            <span class="icon">✉️</span>
-            <div>
-              <h4>Email Address</h4>
-              <p>info@immigrasite.com</p>
+            <div class="icon-wrapper">
+              <span class="icon">✉</span>
             </div>
-          </div>
-          <div class="info-item">
-            <span class="icon">⏰</span>
             <div>
-              <h4>Working Hours</h4>
-              <p>Mon - Fri: 9:00 AM - 6:00 PM</p>
+              <h4 class="gold-text">Secure Email</h4>
+              <p>advisory@nirvee-visa.com</p>
             </div>
-          </div>
-        </div>
-
-        <div class="social-box">
-          <h4>Follow Us</h4>
-          <div class="social-icons">
-            <!-- Icons would go here -->
-            <span class="placeholder-icon">f</span>
-            <span class="placeholder-icon">t</span>
-            <span class="placeholder-icon">in</span>
-            <span class="placeholder-icon">ig</span>
           </div>
         </div>
       </div>
@@ -66,25 +55,30 @@ import ContactForm from '../components/ContactForm.astro';
     </div>
   </section>
 
-  <section class="map-placeholder">
-    <div class="container glass-map flex-center">
-      <h3>Google Maps Integration Placeholder</h3>
-    </div>
-  </section>
 </MainLayout>
 
 <style>
   .page-header {
-    background-color: var(--primary-color);
-    color: var(--white);
+    background: linear-gradient(to bottom, var(--obsidian-light), var(--obsidian));
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 150px;
+    padding-bottom: 80px;
   }
 
-  .page-header h1 { color: var(--white); }
-  
+  .uppercase-label {
+    display: inline-block;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    font-size: 0.9rem;
+  }
+
   .subtitle {
     margin-top: 20px;
-    font-size: 1.2rem;
-    color: var(--gray-light);
+    font-size: 1.25rem;
+    color: var(--text-muted);
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
@@ -92,64 +86,49 @@ import ContactForm from '../components/ContactForm.astro';
 
   .grid-2 {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1.2fr;
     gap: 80px;
     align-items: flex-start;
   }
 
-  .contact-info h2 { margin-bottom: 25px; }
-  .contact-info p { margin-bottom: 40px; color: #4B5563; }
+  .contact-info h2 { margin-bottom: 24px; font-size: 2.2rem; }
+  .contact-info .lead { margin-bottom: 40px; color: var(--text-main); font-weight: 300; font-size: 1.2rem; }
 
-  .info-blocks { display: flex; flex-direction: column; gap: 30px; }
+  .mt-40 { margin-top: 50px; }
+  .info-blocks { display: flex; flex-direction: column; gap: 40px; }
 
   .info-item {
     display: flex;
-    gap: 20px;
+    gap: 24px;
+    align-items: center;
   }
 
-  .icon {
-    font-size: 1.5rem;
-    background: rgba(30, 58, 138, 0.05);
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
+  .icon-wrapper {
+    background: rgba(212, 175, 55, 0.05);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
   }
 
-  .info-item h4 { margin-bottom: 5px; }
-  .info-item p { margin-bottom: 0; font-size: 0.95rem; }
-
-  .social-box { margin-top: 50px; }
-  .social-box h4 { margin-bottom: 20px; }
-  .social-icons { display: flex; gap: 15px; }
-  
-  .placeholder-icon {
-    width: 40px;
-    height: 40px;
-    background: var(--primary-color);
-    color: var(--white);
-    border-radius: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    cursor: pointer;
+  .icon {
+    font-size: 2rem;
+    color: var(--gold);
+    line-height: 1;
   }
 
-  .placeholder-icon:hover { background: var(--accent-gold); color: var(--primary-color); }
-
-  .map-placeholder { padding: 40px 0 80px; }
-  .glass-map {
-    height: 300px;
-    background: var(--gray-light);
-    border-radius: 20px;
-    border: 2px dashed #CBD5E1;
-  }
+  .info-item h4 { margin-bottom: 8px; font-size: 1.1rem; }
+  .info-item p { margin-bottom: 0; font-size: 1rem; color: var(--text-muted); line-height: 1.5; }
 
   @media (max-width: 992px) {
     .grid-2 { grid-template-columns: 1fr; gap: 60px; }
+  }
+
+  @media (max-width: 768px) {
+    .page-header { padding-top: 100px; }
   }
 </style>
