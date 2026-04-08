@@ -1,0 +1,162 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+
+const programs = [
+  {
+    title: 'Student Visa Germany',
+    description: 'Study in Germany with affordable student visa options. Access world-class education and explore career opportunities in Europe\'s strongest economy.',
+    highlights: ['University Admission', 'Part-time Work Rights', 'Post-study Work Permit'],
+    backgroundImage: '/f1.jpg'
+  },
+  {
+    title: 'Student Visa Germany Australia NZ & PR Canada',
+    description: 'Multiple pathway program offering student visas to Germany, Australia, and New Zealand with Permanent Residency options for Canada. Flexible education and migration opportunities.',
+    highlights: ['Germany Student Visa', 'Australia Study', 'Canada PR Pathway'],
+    backgroundImage: '/f2.jpg'
+  },
+  {
+    title: 'Australia Work Permit for Indian Cooks',
+    description: 'Work opportunities in Australia for Indian chefs and cooks. Employer-sponsored visas with competitive salaries and benefits for hospitality professionals.',
+    highlights: ['Chef Opportunities', 'Employer Sponsorship', 'Australia Work Visa'],
+    backgroundImage: '/f3.jpg'
+  },
+  {
+    title: 'Move Abroad With Your Child',
+    description: 'Family migration program allowing parents to move abroad with children aged 5-15. No IELTS required, free schooling, and full family relocation support.',
+    highlights: ['Dependent Visa', 'Free Schooling', 'Family Relocation'],
+    backgroundImage: '/f4.jpg'
+  },
+  {
+    title: 'German Student Visa Study in Germany 2026',
+    description: 'Study in Germany with student visa support for 2026 intake. Public university programs with affordable tuition and excellent post-graduation work opportunities.',
+    highlights: ['Public University', 'Affordable Tuition', 'Post-study Work'],
+    backgroundImage: '/f5.jpg'
+  },
+  {
+    title: 'Australia Nurse Work Recruitment 2026',
+    description: 'Nursing job opportunities in Australia for 2026. Recruitment program for qualified nurses with competitive salaries ranging from AUD 75,000 to $100,000+ per year.',
+    highlights: ['Nurse Recruitment', 'Competitive Salary', '2026 Intake'],
+    backgroundImage: '/f6.jpg'
+  },
+  {
+    title: 'Startup Visa France',
+    description: 'Launch your startup in France with the French Tech Visa. Innovative entrepreneurs can establish their business in Europe\'s second-largest economy with government support.',
+    highlights: ['Tech Visa', 'Business Funding', 'European Market'],
+    backgroundImage: '/f7.png'
+  },
+  {
+    title: 'Age Limit for Work in NZ',
+    description: 'New Zealand work and residency pathways with age considerations. Positions available for various age groups with clear residency pathways and employer support.',
+    highlights: ['Work Visa', 'Residency Pathway', 'Age Flexibility'],
+    backgroundImage: '/f8.jpg'
+  },
+  {
+    title: 'Romania Taxi Driver 20 Positions',
+    description: 'Urgent requirement for taxi drivers in Romania. 20 positions available with salary of 1000 euros, accommodation provided, and food support from employer.',
+    highlights: ['20 Positions', '1000 Euro Salary', 'Accommodation Provided'],
+    backgroundImage: '/f9.jpg'
+  },
+  {
+    title: 'New Zealand Farm Worker Recruitment',
+    description: 'Farm worker opportunities in New Zealand for 2026. Recruitment for agricultural positions with competitive hourly rates and comprehensive employment benefits.',
+    highlights: ['Farm Work', '2026 Recruitment', 'Competitive Pay'],
+    backgroundImage: '/f10.jpg'
+  },
+  {
+    title: 'Greece Garbage Drivers Hiring',
+    description: 'We are hiring garbage drivers for Greece. Positions available with Category C license requirement, salary starting at 1000 Euro, and comprehensive benefits package.',
+    highlights: ['Category C License', '1000 Euro Salary', 'Housing Provided'],
+    backgroundImage: '/f11.jpg'
+  },
+  {
+    title: 'Hungary Truck Drivers 25 Positions',
+    description: 'Urgent requirement for truck drivers in Hungary. 25 positions available with salary 1800-1900 euros, food and accommodation support, and dependent visa options after 6 months.',
+    highlights: ['25 Positions', '1800-1900 Euro', 'Take Dependents'],
+    backgroundImage: '/f12.jpg'
+  },
+  {
+    title: 'Australia Work Visa Sri Lankans Indians',
+    description: 'Work opportunities in Australia specifically for Sri Lankan and Indian nationals. Legal overseas employment with direct employer sponsorship and competitive hourly rates.',
+    highlights: ['Sri Lanka India', 'Direct Sponsorship', 'Legal Employment'],
+    backgroundImage: '/f13.jpg'
+  },
+  {
+    title: 'Estonia Urgent Requirements Multiple Roles',
+    description: 'Urgent job openings in Estonia for sand blasters, spray painters, CNC operators, and more. Salary 7-8 euros per hour with accommodation and food provided by company.',
+    highlights: ['Multiple Positions', '7-8 Euro/Hour', 'Accommodation Food'],
+    backgroundImage: '/f14.jpg'
+  },
+  {
+    title: 'Fiji Island Australia Indian Cook Required',
+    description: 'Indian cook opportunities in Fiji Island and Australia. Work opportunity abroad for South Indian and North Indian cuisine specialists with competitive monthly salaries.',
+    highlights: ['Indian Cook', 'Fiji Australia', 'Competitive Salary'],
+    backgroundImage: '/f15.jpg'
+  }
+];
+---
+
+<MainLayout title="New Programs" description="Global immigration programs for study, work, and investment opportunities.">
+  <section class="page-header section-padding">
+    <div class="container text-center">
+      <span class="gold-text uppercase-label">Global Immigration</span>
+      <h1>Worldwide Opportunities</h1>
+      <p class="subtitle">Explore diverse immigration programs across 15+ countries including study visas, work permits, investor visas, and permanent residency pathways.</p>
+    </div>
+  </section>
+
+  <section class="programs-list section-padding">
+    <div class="container">
+      <div class="grid programs-grid">
+        {programs.map(program => (
+          <ServiceCard 
+            icon="??"
+            title={program.title}
+            description={program.description}
+            link="/contact"
+            backgroundImage={program.backgroundImage}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+</MainLayout>
+
+<style>
+  .page-header {
+    background: var(--background);
+    border-bottom: 1px solid var(--border-light);
+    padding-top: 150px;
+    padding-bottom: 80px;
+  }
+
+  .uppercase-label {
+    display: inline-block;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    font-size: 0.9rem;
+  }
+
+  .subtitle {
+    margin-top: 20px;
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .programs-grid {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+  }
+
+  @media (max-width: 768px) {
+    .programs-grid { grid-template-columns: 1fr; }
+    .page-header { padding-top: 100px; }
+  }
+</style>

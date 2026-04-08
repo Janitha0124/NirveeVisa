@@ -1,7 +1,16 @@
 ---
 const navLinks = [
   { name: 'Home', href: '/' },
-  { name: 'Programs', href: '/programs' },
+  { 
+    name: 'Programs', 
+    href: '/programs',
+    dropdown: [
+      { name: 'PR Pathway', href: '/programs/pr-pathway' },
+      { name: 'Study Permit', href: '/programs/study-permit' },
+      { name: 'Job Seeker Visa', href: '/programs/job-seeker-visa' },
+      { name: 'New Programs', href: '/programs/new-programs' }
+    ]
+  },
   { name: 'Services', href: '/services' },
   { name: 'Testimonials', href: '/testimonials' },
   { name: 'About Us', href: '/about' },
@@ -49,8 +58,21 @@ const navLinks = [
     <nav class="nav">
       <ul class="nav-list">
         {navLinks.map(link => (
-          <li key={link.name}>
-            <a href={link.href} class="nav-link">{link.name}</a>
+          <li key={link.name} class="nav-item">
+            {link.dropdown ? (
+              <>
+                <a href={link.href} class="nav-link dropdown-toggle">{link.name}</a>
+                <ul class="dropdown-menu">
+                  {link.dropdown.map(item => (
+                    <li key={item.name}>
+                      <a href={item.href} class="dropdown-link">{item.name}</a>
+                    </li>
+                  ))}
+                </ul>
+              </>
+            ) : (
+              <a href={link.href} class="nav-link">{link.name}</a>
+            )}
           </li>
         ))}
       </ul>
@@ -225,6 +247,69 @@ const navLinks = [
     color: var(--primary-purple);
   }
 
+  /* Dropdown Styles */
+  .nav-item {
+    position: relative;
+  }
+
+  .dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .dropdown-toggle::after {
+    content: '▼';
+    font-size: 0.7rem;
+    transition: transform 0.3s ease;
+  }
+
+  .nav-item:hover .dropdown-toggle::after {
+    transform: rotate(180deg);
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    min-width: 200px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    border: 1px solid var(--border-light);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    padding: 8px 0;
+    margin-top: 8px;
+  }
+
+  .nav-item:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .dropdown-link {
+    display: block;
+    padding: 10px 20px;
+    color: var(--text-main);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 400;
+    transition: all 0.3s ease;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+  }
+
+  .dropdown-link:hover {
+    color: var(--primary-purple);
+    background: rgba(124, 58, 237, 0.05);
+  }
 
   /* Mobile */
   @media (max-width: 992px) {

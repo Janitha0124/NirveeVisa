@@ -55,6 +55,21 @@ import ContactForm from '../components/ContactForm.astro';
     </div>
   </section>
 
+  <section class="map-section">
+    <div class="map-container">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3936.2!2d80.0299!3d9.6660!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3afe56d8783731dd%3A0xcc968a4c9f4d5fd7!2sNirvee%20Visa%20%26%20Experts%20(Pvt)%20Ltd!5e0!3m2!1sen!2slk!4v1704067200000&maptype=roadmap&markers=color:red%7Clabel:N%7C9.665964590451682,80.02989067485767"
+        width="100%"
+        height="400"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Nirvee Visa & Experts Location"
+      ></iframe>
+    </div>
+  </section>
+
 </MainLayout>
 
 <style>
@@ -140,5 +155,23 @@ import ContactForm from '../components/ContactForm.astro';
 
   @media (max-width: 768px) {
     .page-header { padding-top: 100px; }
+  }
+
+  .map-section {
+    padding: 0;
+    margin: 0;
+  }
+
+  .map-container {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+  }
+
+  .map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
   }
 </style>

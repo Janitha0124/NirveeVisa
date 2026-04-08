@@ -4,23 +4,34 @@ interface Props {
   title: string;
   description: string;
   link: string;
+  backgroundImage?: string;
 }
 
-const { icon, title, description, link } = Astro.props;
+const { icon, title, description, link, backgroundImage } = Astro.props;
 ---
 
-<div class="glass-card service-card">
-  <div class="icon-wrapper">
-    <span>{icon}</span>
+<div class="glass-card service-card" style={backgroundImage ? `background-image: url('${backgroundImage}')` : ''}>
+  <div class="dark-overlay"></div>
+  <div class="card-content">
+    <div class="icon-wrapper">
+      <span>{icon}</span>
+    </div>
+    <div class="title-section">
+      <h3>{title}</h3>
+      <div class="card-details">
+        <p>{description}</p>
+        <a href={link} class="link-more">Learn More <span>&rarr;</span></a>
+      </div>
+    </div>
   </div>
-  <h3>{title}</h3>
-  <p>{description}</p>
-  <a href={link} class="link-more">Learn More <span>&rarr;</span></a>
 </div>
 
 <style>
   .service-card {
     background: var(--card-bg);
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -34,17 +45,48 @@ const { icon, title, description, link } = Astro.props;
     box-shadow: var(--card-shadow);
   }
 
-  .service-card::before {
-    content: '';
+    .card-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+    color: white;
+  }
+
+  .card-content h3 {
+    color: white;
+  }
+
+  .card-content p {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .card-content .link-more {
+    color: white;
+  }
+
+  .service-card::after {
+    display: none;
+  }
+
+  .dark-overlay {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(124, 58, 237, 0.05), rgba(219, 39, 119, 0.05));
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+    transition: background 0.4s ease;
+  }
+
+  .card-details {
     opacity: 0;
-    transition: opacity 0.4s ease;
-    z-index: -1;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .service-card:hover {
@@ -53,9 +95,16 @@ const { icon, title, description, link } = Astro.props;
     border-color: var(--primary-pink);
   }
 
-  .service-card:hover::before {
-    opacity: 1;
+  .service-card:hover .dark-overlay {
+    background: rgba(0, 0, 0, 0.8);
   }
+
+  .service-card:hover .card-details {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
 
   .icon-wrapper {
     background: linear-gradient(135deg, rgba(124, 58, 237, 0.15), rgba(219, 39, 119, 0.1));
@@ -96,7 +145,9 @@ const { icon, title, description, link } = Astro.props;
     opacity: 1;
   }
 
+  
   h3 {
+    margin-top: auto;
     margin-bottom: 16px;
     font-size: 1.5rem;
     font-weight: 600;
@@ -112,18 +163,18 @@ const { icon, title, description, link } = Astro.props;
   }
 
   .service-card:hover h3 {
-    color: var(--primary-purple);
+    color: white;
     transform: translateX(4px);
   }
 
   .service-card:hover p {
-    color: var(--text-main);
+    color: rgba(255, 255, 255, 0.9);
   }
 
   .link-more {
     font-family: var(--font-heading);
     font-weight: 500;
-    color: var(--primary-purple);
+    color: white;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     font-size: 0.9rem;
@@ -151,7 +202,7 @@ const { icon, title, description, link } = Astro.props;
   }
 
   .service-card:hover .link-more {
-    color: var(--primary-purple);
+    color: white;
     transform: translateX(2px);
   }
 
@@ -161,6 +212,6 @@ const { icon, title, description, link } = Astro.props;
 
   .service-card:hover .link-more span {
     transform: translateX(8px);
-    color: var(--primary-purple);
+    color: white;
   }
 </style>
