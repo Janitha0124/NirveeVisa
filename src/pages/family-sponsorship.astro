@@ -1,0 +1,165 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+---
+
+<MainLayout title="Family Sponsorship Services" description="Sponsor family members to come to Canada">
+  <section class="page-header section-padding">
+    <div class="container text-center">
+      <span class="gold-text uppercase-label">Visa Services</span>
+      <h1>Family Sponsorship</h1>
+      <p class="subtitle">Canadian citizens and permanent residents can sponsor family members for permanent residence.</p>
+    </div>
+  </section>
+
+  <section class="visitor-visa-content section-padding">
+    <div class="container">
+      <div class="content-grid">
+        <!-- Super Visa -->
+        <div class="glass-card content-section">
+          <div class="section-icon">elderly</div>
+          <h2>Super Visa</h2>
+          <p>Parents and grandparents can visit Canada for up to five years at a time, with multiple entries valid for up to 10 years. Eligibility requires proof of relationship, admissibility, financial support from a Canadian family member, health insurance coverage, and medical clearance.</p>
+        </div>
+
+        <!-- Spousal & Partner Sponsorship -->
+        <div class="glass-card content-section">
+          <div class="section-icon">favorite</div>
+          <h2>Spousal & Partner Sponsorship</h2>
+          <p>Married, common-law, or conjugal partners can apply for permanent residence. Processing times range from 8 to 12 months, with applications submitted online. Both in-Canada and out-of-Canada applications are possible, with eligibility criteria varying accordingly.</p>
+        </div>
+
+        <!-- Dependent Child Sponsorship -->
+        <div class="glass-card content-section">
+          <div class="section-icon">child_care</div>
+          <h2>Dependent Child Sponsorship</h2>
+          <p>Parents can sponsor children under 22 (or older if financially dependent due to disability) for permanent residence. Other relatives, such as siblings or orphans, may qualify under special circumstances.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section section-padding bg-darker">
+    <div class="container text-center">
+      <h2>Ready to Sponsor Your Family?</h2>
+      <p class="subtitle">Our experienced immigration team is ready to assist you at every step.</p>
+      <div class="cta-buttons">
+        <a href="/contact" class="btn btn-primary">Contact Us Today</a>
+      </div>
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+  /* [Same styles as previous templates] */
+  .page-header {
+    background: var(--background);
+    border-bottom: 1px solid var(--border-light);
+    padding-top: 150px;
+    padding-bottom: 80px;
+  }
+  .uppercase-label {
+    display: inline-block;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    font-size: 0.9rem;
+  }
+  .subtitle {
+    margin-top: 20px;
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .content-grid {
+    display: grid;
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .content-section {
+    padding: 40px;
+    border-radius: 16px;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    box-shadow: var(--card-shadow);
+    position: relative;
+    overflow: hidden;
+  }
+  .content-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(124, 58, 237, 0.03), rgba(219, 39, 119, 0.03));
+    z-index: -1;
+  }
+  .section-icon {
+    font-size: 2.5rem;
+    margin-bottom: 24px;
+    color: var(--primary-purple);
+    opacity: 0.8;
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+  }
+  .content-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--text-main);
+    font-weight: 600;
+  }
+  .content-section p {
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 24px;
+    font-size: 1.1rem;
+  }
+  .bg-darker {
+    background-color: var(--background);
+    border-top: 1px solid var(--border-light);
+  }
+  .cta-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--text-main);
+  }
+  .cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+  }
+  .btn {
+    padding: 16px 32px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-block;
+    font-size: 1.1rem;
+  }
+  .btn-primary {
+    background: var(--primary-gradient);
+    color: white;
+    border: none;
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(124, 58, 237, 0.3);
+  }
+  @media (max-width: 768px) {
+    .page-header { padding-top: 100px; padding-bottom: 60px; }
+    .content-section { padding: 24px; }
+    .content-section h2 { font-size: 1.5rem; }
+    .cta-section h2 { font-size: 2rem; }
+    .cta-buttons { flex-direction: column; align-items: center; }
+    .btn { width: 100%; max-width: 300px; }
+  }
+</style>

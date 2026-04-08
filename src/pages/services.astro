@@ -3,34 +3,40 @@ import MainLayout from '../layouts/MainLayout.astro';
 
 const services = [
   {
-    icon: '🏢',
-    title: 'Corporate Mobility',
-    description: 'Bespoke strategic mobility solutions designed specifically for multinational enterprises scaling their global footprint.',
+    icon: 'flight_takeoff',
+    title: "VISITOR VISA",
+    description: 'Complete guidance for temporary travel to Canada, including visa applications and electronic Travel Authorization (eTA) services.',
+    link: '/visitor-visa'
   },
   {
-    icon: '🎓',
-    title: 'Elite Student Visas',
-    description: 'Premier academic transition support to secure placements in top-tier global institutions without bureaucratic friction.',
+    icon: 'school',
+    title: 'STUDY PERMIT',
+    description: 'Complete guidance for international students to obtain study permits and navigate Canadian education pathways.',
+    link: '/study-permit'
   },
   {
-    icon: '🌟',
-    title: 'Global Talent',
-    description: 'Fast-tracked, red-carpet routes for pioneers in STEM, arts, and business wishing to relocate to major global hubs.',
+    icon: 'work',
+    title: 'WORK VISA',
+    description: 'Comprehensive support for various work permits, including employer-specific, open work permits, and Post-Graduation Work Permits (PGWP).',
+    link: '/work-visa'
   },
   {
-    icon: '⚖️',
-    title: 'Strategic Consultation',
-    description: 'Rigorous legal roadmapping for complex immigration appeals, ensuring compliance and maximizing success rates.',
+    icon: 'family_restroom',
+    title: 'FAMILY SPONSORSHIP',
+    description: 'Guidance for sponsoring spouses, partners, dependent children, and parents/grandparents through Super Visa and other family reunification programs.',
+    link: '/family-sponsorship'
   },
   {
-    icon: '🛡️',
-    title: 'Compliance Audits',
-    description: 'Meticulous review of corporate sponsorship frameworks to guarantee alignment with stringent global immigration laws.',
+    icon: 'business_center',
+    title: 'BUSINESS IMMIGRATION PATHWAYS',
+    description: 'Strategic guidance for entrepreneurs, investors, and self-employed individuals seeking to establish or expand their business in Canada.',
+    link: '/business-immigration'
   },
   {
-    icon: '💼',
-    title: 'Investor Relocation',
-    description: 'Expedited residency and citizenship pathways via strategic high-value asset investment.',
+    icon: 'verified_user',
+    title: 'PERMANENT RESIDENCY OPTIONS',
+    description: 'Comprehensive pathways to Canadian permanent residency, including Family Sponsorship, Economic Immigration, and Provincial Nominee Programs.',
+    link: '/permanent-residency'
   }
 ];
 ---
@@ -48,13 +54,20 @@ const services = [
     <div class="container">
       <div class="grid services-grid">
         {services.map(service => (
-          <div class="glass-card service-card">
-            <div class="icon-wrapper">
-              <span>{service.icon}</span>
+          <a href={service.link || '#'} class="service-link">
+            <div class="glass-card service-card">
+              <div class="icon-wrapper">
+                <span class="material-icons">{service.icon}</span>
+              </div>
+              <h3>{service.title}</h3>
+              <p>{service.description}</p>
+              {service.link && (
+                <div class="card-arrow">
+                  <span class="material-icons">arrow_forward</span>
+                </div>
+              )}
             </div>
-            <h3>{service.title}</h3>
-            <p>{service.description}</p>
-          </div>
+          </a>
         ))}
       </div>
     </div>
@@ -171,11 +184,14 @@ const services = [
     justify-content: center;
     border-radius: 12px;
     margin-bottom: 24px;
-    font-size: 1.8rem;
-    color: var(--primary-purple);
     border: 1px solid rgba(124, 58, 237, 0.1);
     transition: all 0.3s ease;
     position: relative;
+  }
+
+  .icon-wrapper .material-icons {
+    font-size: 2rem;
+    color: var(--primary-purple);
   }
 
   .icon-wrapper::after {
@@ -222,6 +238,31 @@ const services = [
 
   .service-card:hover p {
     color: var(--text-main);
+  }
+
+  .service-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+
+  .card-arrow {
+    position: absolute;
+    bottom: 10px;
+    right: 24px;
+    color: var(--primary-purple);
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+  }
+
+  .card-arrow .material-icons {
+    font-size: 1.5rem;
+  }
+
+  .service-card:hover .card-arrow {
+    opacity: 1;
+    transform: translateX(0);
   }
 
   .bg-darker {

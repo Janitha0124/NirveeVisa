@@ -1,0 +1,243 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+---
+
+<MainLayout title="Work Visa Services" description="LMIA and work permit requirements for Canada">
+  <section class="page-header section-padding">
+    <div class="container text-center">
+      <span class="gold-text uppercase-label">Visa Services</span>
+      <h1>Work Visa</h1>
+      <p class="subtitle">An LMIA is required if you want to hire a foreign worker in Canada.</p>
+    </div>
+  </section>
+
+  <section class="visitor-visa-content section-padding">
+    <div class="container">
+      <div class="content-grid">
+        <!-- LMIA & Work Authorization -->
+        <div class="glass-card content-section">
+          <div class="section-icon">business_center</div>
+          <h2>LMIA & Work Authorization</h2>
+          <p>An LMIA assesses whether hiring a foreign national will negatively impact the local labor market. Employers must demonstrate efforts to hire Canadians first and meet wage and employment standards.</p>
+          <div class="highlight-box">
+            <h3>Application Steps:</h3>
+            <ul>
+              <li>Verify eligibility</li>
+              <li>Advertise the job on government platforms and other channels for at least 4 weeks</li>
+              <li>Submit your LMIA application online</li>
+              <li>Await evaluation and approval from ESDC</li>
+              <li>Once approved, the foreign worker applies for a work permit, providing necessary documentation (job offer, LMIA, employment contract)</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Employer Requirements -->
+        <div class="glass-card content-section">
+          <div class="section-icon"> business</div>
+          <h2>Employer Requirements</h2>
+          <p>Employers must show they've tried to find Canadian workers, pay fair wages, and comply with labor laws. High-wage workers require a transition plan, while low-wage workers are subject to caps on foreign worker employment.</p>
+        </div>
+
+        <!-- LMIA Exemptions & Rejections -->
+        <div class="glass-card content-section">
+          <div class="section-icon"> verified</div>
+          <h2>LMIA Exemptions & Rejections</h2>
+          <p><strong>Exemptions:</strong> Certain international agreements and programs (e.g., CETA, GTS, intra-company transfers) exempt employers from LMIA requirements.</p>
+          <p><strong>Common Rejection Reasons:</strong></p>
+          <ul>
+            <li>Lack of genuine need for a foreign worker</li>
+            <li>Non-compliance with labor standards</li>
+            <li>Misrepresentation or false information in the application</li>
+          </ul>
+        </div>
+
+        <!-- Post-Graduation Work Permit -->
+        <div class="glass-card content-section">
+          <div class="section-icon"> school</div>
+          <h2>Post-Graduation Work Permit (PGWP)</h2>
+          <p>Graduates from eligible institutions can apply for up to three years of work authorization after completing a program of at least eight months. The PGWP offers valuable Canadian work experience, which can later support permanent residence applications through the Canadian Experience Class or Provincial Nominee Programs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section section-padding bg-darker">
+    <div class="container text-center">
+      <h2>Need Help With Your Work Permit?</h2>
+      <p class="subtitle">Our experienced immigration team is ready to assist you at every step.</p>
+      <div class="cta-buttons">
+        <a href="/contact" class="btn btn-primary">Contact Us Today</a>
+      </div>
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+  /* [Same styles as previous templates] */
+  .page-header {
+    background: var(--background);
+    border-bottom: 1px solid var(--border-light);
+    padding-top: 150px;
+    padding-bottom: 80px;
+  }
+  .uppercase-label {
+    display: inline-block;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    font-size: 0.9rem;
+  }
+  .subtitle {
+    margin-top: 20px;
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .content-grid {
+    display: grid;
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .content-section {
+    padding: 40px;
+    border-radius: 16px;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    box-shadow: var(--card-shadow);
+    position: relative;
+    overflow: hidden;
+  }
+  .content-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(124, 58, 237, 0.03), rgba(219, 39, 119, 0.03));
+    z-index: -1;
+  }
+  .section-icon {
+    font-size: 2.5rem;
+    margin-bottom: 24px;
+    color: var(--primary-purple);
+    opacity: 0.8;
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+  }
+  .content-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--text-main);
+    font-weight: 600;
+  }
+  .content-section p {
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 24px;
+    font-size: 1.1rem;
+  }
+  .content-section ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  .content-section li {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 12px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+  .content-section li::before {
+    content: 'check_circle';
+    position: absolute;
+    left: 0;
+    color: var(--primary-purple);
+    font-size: 1.2rem;
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+  }
+  .highlight-box {
+    background: rgba(124, 58, 237, 0.05);
+    border: 1px solid rgba(124, 58, 237, 0.1);
+    border-radius: 12px;
+    padding: 24px;
+    margin-top: 24px;
+  }
+  .highlight-box h3 {
+    color: var(--primary-purple);
+    margin-bottom: 16px;
+    font-size: 1.3rem;
+  }
+  .highlight-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .highlight-box li {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 12px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+  .highlight-box li::before {
+    content: 'check_circle';
+    position: absolute;
+    left: 0;
+    color: var(--primary-purple);
+    font-size: 1.2rem;
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+  }
+  .bg-darker {
+    background-color: var(--background);
+    border-top: 1px solid var(--border-light);
+  }
+  .cta-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--text-main);
+  }
+  .cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+  }
+  .btn {
+    padding: 16px 32px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-block;
+    font-size: 1.1rem;
+  }
+  .btn-primary {
+    background: var(--primary-gradient);
+    color: white;
+    border: none;
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(124, 58, 237, 0.3);
+  }
+  @media (max-width: 768px) {
+    .page-header { padding-top: 100px; padding-bottom: 60px; }
+    .content-section { padding: 24px; }
+    .content-section h2 { font-size: 1.5rem; }
+    .cta-section h2 { font-size: 2rem; }
+    .cta-buttons { flex-direction: column; align-items: center; }
+    .btn { width: 100%; max-width: 300px; }
+  }
+</style>
