@@ -1,0 +1,212 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+---
+
+<MainLayout title="Ireland Student Visa" description="Ireland student visa application requirements and process">
+  <section class="page-header section-padding">
+    <div class="container text-center">
+      <span class="gold-text uppercase-label">Study Permit</span>
+      <h1>Ireland Student Visa</h1>
+      <p class="subtitle">Experience world-class education in the Emerald Isle with an Ireland Study Visa.</p>
+    </div>
+  </section>
+
+  <section class="visitor-visa-content section-padding">
+    <div class="container">
+      <div class="content-grid">
+        <div class="glass-card content-section">
+          <div class="section-icon">school</div>
+          <h2>Eligibility Requirements</h2>
+          <div class="highlight-box">
+            <ul>
+              <li>Letter of acceptance from an accredited Irish institution</li>
+              <li>Proof of payment of tuition fees</li>
+              <li>Evidence of sufficient funds (€7,000 minimum)</li>
+              <li>Private medical insurance coverage</li>
+              <li>English language proficiency proof</li>
+              <li>Commitment to return home after studies</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="glass-card content-section">
+          <div class="section-icon">attach_money</div>
+          <h2>Financial Requirements</h2>
+          <p>You must demonstrate access to:</p>
+          <div class="highlight-box">
+            <ul>
+              <li>Course fees paid in full or evidence of funding source</li>
+              <li>Living expenses: at least €7,000 for one academic year</li>
+              <li>Additional €7,000 for each subsequent year</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="glass-card content-section">
+          <div class="section-icon">work</div>
+          <h2>Work Rights</h2>
+          <p>Non-EEA students can work up to 20 hours per week during term time and 40 hours per week during holidays (June-September and December 15-January 15).</p>
+        </div>
+
+        <div class="glass-card content-section">
+          <div class="section-icon">update</div>
+          <h2>Stay Back Option</h2>
+          <p>Ireland offers a Third Level Graduate Scheme allowing students to remain for up to 2 years after graduation to seek employment. Graduates with critical skills can transition to work permits and eventually permanent residency.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section section-padding bg-darker">
+    <div class="container text-center">
+      <h2>Ready to Study in Ireland?</h2>
+      <p class="subtitle">Let our experts guide you through the Ireland student visa process.</p>
+      <div class="cta-buttons">
+        <a href="/contact" class="btn btn-primary">Get Started</a>
+      </div>
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+  .page-header {
+    background: var(--background);
+    border-bottom: 1px solid var(--border-light);
+    padding-top: 150px;
+    padding-bottom: 80px;
+  }
+  .uppercase-label {
+    display: inline-block;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    font-size: 0.9rem;
+  }
+  .subtitle {
+    margin-top: 20px;
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .content-grid {
+    display: grid;
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .content-section {
+    padding: 40px;
+    border-radius: 16px;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    box-shadow: var(--card-shadow);
+    position: relative;
+    overflow: hidden;
+  }
+  .content-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(124, 58, 237, 0.03), rgba(219, 39, 119, 0.03));
+    z-index: -1;
+  }
+  .section-icon {
+    font-size: 2.5rem;
+    margin-bottom: 24px;
+    color: var(--primary-purple);
+    opacity: 0.8;
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+  }
+  .content-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--text-main);
+    font-weight: 600;
+  }
+  .content-section p {
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 24px;
+    font-size: 1.1rem;
+  }
+  .highlight-box {
+    background: rgba(124, 58, 237, 0.05);
+    border: 1px solid rgba(124, 58, 237, 0.1);
+    border-radius: 12px;
+    padding: 24px;
+    margin-top: 24px;
+  }
+  .highlight-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .highlight-box li {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 12px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+  .highlight-box li::before {
+    content: 'check_circle';
+    position: absolute;
+    left: 0;
+    color: var(--primary-purple);
+    font-size: 1.2rem;
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+  }
+  .bg-darker {
+    background-color: var(--background);
+    border-top: 1px solid var(--border-light);
+  }
+  .cta-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--text-main);
+  }
+  .cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+  }
+  .btn {
+    padding: 16px 32px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-block;
+    font-size: 1.1rem;
+  }
+  .btn-primary {
+    background: var(--primary-gradient);
+    color: white;
+    border: none;
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(124, 58, 237, 0.3);
+  }
+  @media (max-width: 768px) {
+    .page-header { padding-top: 100px; padding-bottom: 60px; }
+    .content-section { padding: 24px; }
+    .content-section h2 { font-size: 1.5rem; }
+    .cta-section h2 { font-size: 2rem; }
+    .cta-buttons { flex-direction: column; align-items: center; }
+    .btn { width: 100%; max-width: 300px; }
+  }
+</style>

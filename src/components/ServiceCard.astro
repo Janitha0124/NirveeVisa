@@ -20,7 +20,7 @@ const { icon, title, description, link, backgroundImage } = Astro.props;
       <h3>{title}</h3>
       <div class="card-details">
         <p>{description}</p>
-        <a href={link} class="link-more">Learn More <span>&rarr;</span></a>
+        <a href={link} class="link-more" target={link.startsWith('http') ? '_blank' : '_self'} rel={link.startsWith('http') ? 'noopener noreferrer' : ''}>Learn More <span>&rarr;</span></a>
       </div>
     </div>
   </div>

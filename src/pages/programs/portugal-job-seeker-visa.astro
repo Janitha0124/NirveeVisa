@@ -1,0 +1,230 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+---
+
+<MainLayout title="Portugal Job Seeker Visa" description="Portugal Job Seeker Visa application requirements and process">
+  <section class="page-header section-padding">
+    <div class="container text-center">
+      <span class="gold-text uppercase-label">Job Seeker Visa</span>
+      <h1>Portugal Job Seeker Visa</h1>
+      <p class="subtitle">Find opportunities in Portugal with the new Job Seeker Visa program.</p>
+    </div>
+  </section>
+
+  <section class="visitor-visa-content section-padding">
+    <div class="container">
+      <div class="content-grid">
+        <div class="glass-card content-section">
+          <div class="section-icon">work</div>
+          <h2>Eligibility Requirements</h2>
+          <div class="highlight-box">
+            <ul>
+              <li>Valid passport with minimum 6 months validity</li>
+              <li>Educational qualifications (degree or diploma)</li>
+              <li>Professional experience certificates</li>
+              <li>Clean criminal record certificate</li>
+              <li>Health insurance valid in Portugal</li>
+              <li>Proof of means of subsistence</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="glass-card content-section">
+          <div class="section-icon">attach_money</div>
+          <h2>Financial Requirements</h2>
+          <p>You must demonstrate sufficient funds:</p>
+          <div class="highlight-box">
+            <ul>
+              <li>Minimum €1,200 per month (based on minimum wage)</li>
+              <li>Bank statements for last 3-6 months</li>
+              <li>Or employment contract if transferring</li>
+              <li>Sufficient funds for return travel</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="glass-card content-section">
+          <div class="section-icon">schedule</div>
+          <h2>Visa Duration & Conditions</h2>
+          <p>Key details:</p>
+          <div class="highlight-box">
+            <ul>
+              <li>Initial validity: 120 days (4 months)</li>
+              <li>One-time extension possible (60 days)</li>
+              <li>Total maximum: 6 months to find employment</li>
+              <li>Cannot work until visa converted to work permit</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="glass-card content-section">
+          <div class="section-icon">update</div>
+          <h2>Path to Residence</h2>
+          <p>After finding employment:</p>
+          <div class="highlight-box">
+            <ul>
+              <li>Apply for residence permit at SEF</li>
+              <li>Work contract required for conversion</li>
+              <li>Initial residence valid for 1-2 years</li>
+              <li>Pathway to permanent residence after 5 years</li>
+              <li>Eligible for citizenship after 5 years</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section section-padding bg-darker">
+    <div class="container text-center">
+      <h2>Ready to Work in Portugal?</h2>
+      <p class="subtitle">Let our experts guide you through the Portugal Job Seeker Visa process.</p>
+      <div class="cta-buttons">
+        <a href="/contact" class="btn btn-primary">Get Started</a>
+      </div>
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+  .page-header {
+    background: var(--background);
+    border-bottom: 1px solid var(--border-light);
+    padding-top: 150px;
+    padding-bottom: 80px;
+  }
+  .uppercase-label {
+    display: inline-block;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    font-size: 0.9rem;
+  }
+  .subtitle {
+    margin-top: 20px;
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .content-grid {
+    display: grid;
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .content-section {
+    padding: 40px;
+    border-radius: 16px;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    box-shadow: var(--card-shadow);
+    position: relative;
+    overflow: hidden;
+  }
+  .content-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(124, 58, 237, 0.03), rgba(219, 39, 119, 0.03));
+    z-index: -1;
+  }
+  .section-icon {
+    font-size: 2.5rem;
+    margin-bottom: 24px;
+    color: var(--primary-purple);
+    opacity: 0.8;
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+  }
+  .content-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--text-main);
+    font-weight: 600;
+  }
+  .content-section p {
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 24px;
+    font-size: 1.1rem;
+  }
+  .highlight-box {
+    background: rgba(124, 58, 237, 0.05);
+    border: 1px solid rgba(124, 58, 237, 0.1);
+    border-radius: 12px;
+    padding: 24px;
+    margin-top: 24px;
+  }
+  .highlight-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .highlight-box li {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 12px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+  .highlight-box li::before {
+    content: 'check_circle';
+    position: absolute;
+    left: 0;
+    color: var(--primary-purple);
+    font-size: 1.2rem;
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+  }
+  .bg-darker {
+    background-color: var(--background);
+    border-top: 1px solid var(--border-light);
+  }
+  .cta-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--text-main);
+  }
+  .cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+  }
+  .btn {
+    padding: 16px 32px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-block;
+    font-size: 1.1rem;
+  }
+  .btn-primary {
+    background: var(--primary-gradient);
+    color: white;
+    border: none;
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(124, 58, 237, 0.3);
+  }
+  @media (max-width: 768px) {
+    .page-header { padding-top: 100px; padding-bottom: 60px; }
+    .content-section { padding: 24px; }
+    .content-section h2 { font-size: 1.5rem; }
+    .cta-section h2 { font-size: 2rem; }
+    .cta-buttons { flex-direction: column; align-items: center; }
+    .btn { width: 100%; max-width: 300px; }
+  }
+</style>

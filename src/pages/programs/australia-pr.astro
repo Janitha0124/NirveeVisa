@@ -1,0 +1,247 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+---
+
+<MainLayout title="Australia Permanent Residence" description="Australia PR pathways through General Skilled Migration">
+  <section class="page-header section-padding">
+    <div class="container text-center">
+      <span class="gold-text uppercase-label">PR Pathway</span>
+      <h1>Australia Permanent Residence</h1>
+      <p class="subtitle">Multiple pathways to permanent residency in Australia through skilled migration.</p>
+    </div>
+  </section>
+
+  <section class="visitor-visa-content section-padding">
+    <div class="container">
+      <div class="content-grid">
+        <div class="glass-card content-section">
+          <div class="section-icon">stars</div>
+          <h2>General Skilled Migration Visas</h2>
+          <div class="highlight-box">
+            <ul>
+              <li><strong>Subclass 189 (Skilled Independent)</strong> - No sponsorship required, points-based</li>
+              <li><strong>Subclass 190 (Skilled Nominated)</strong> - State/territory nomination required</li>
+              <li><strong>Subclass 491 (Skilled Work Regional)</strong> - Provisional visa, pathway to PR</li>
+              <li>All require occupation on Skilled Occupation List</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="glass-card content-section">
+          <div class="section-icon">trending_up</div>
+          <h2>Points Test Requirements</h2>
+          <p>Minimum 65 points required. Points awarded for:</p>
+          <div class="highlight-box">
+            <ul>
+              <li>Age (max 30 points for ages 25-32)</li>
+              <li>English language (max 20 points for Superior)</li>
+              <li>Skilled employment (max 20 points for 8+ years)</li>
+              <li>Educational qualifications (max 20 points for PhD)</li>
+              <li>Australian study (5-15 points)</li>
+              <li>State nomination (5 or 15 points)</li>
+              <li>Partner skills (10 points)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="glass-card content-section">
+          <div class="section-icon">verified</div>
+          <h2>Skills Assessment & EOI</h2>
+          <p>Before applying:</p>
+          <div class="highlight-box">
+            <ul>
+              <li>Skills assessment from relevant assessing authority</li>
+              <li>Competent English (IELTS 6.0 each band minimum)</li>
+              <li>Submit Expression of Interest (EOI) via SkillSelect</li>
+              <li>Receive invitation to apply based on points ranking</li>
+              <li>Health and character checks required</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="glass-card content-section">
+          <div class="section-icon">attach_money</div>
+          <h2>Visa Fees & Costs</h2>
+          <p>Application costs (2024 estimates):</p>
+          <div class="highlight-box">
+            <ul>
+              <li>Primary applicant: AUD $4,640</li>
+              <li>Additional applicant 18+: AUD $2,320 each</n              <li>Additional applicant under 18: AUD $1,160 each</li>
+              <li>Skills assessment fees: AUD $500-1,000</li>
+              <li>Health checks: AUD $300-500 per person</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="glass-card content-section">
+          <div class="section-icon">emoji_events</div>
+          <h2>Permanent Resident Benefits</h2>
+          <p>As an Australian PR:</p>
+          <div class="highlight-box">
+            <ul>
+              <li>Live and work in Australia indefinitely</li>
+              <li>Enroll in Medicare (public healthcare)</li>
+              <li>Sponsor eligible relatives for PR</li>
+              <li>Travel to and from Australia for 5 years</li>
+              <li>Apply for citizenship after 4 years (including 1 year as PR)</li>
+              <li>Eligible for certain social security benefits</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section section-padding bg-darker">
+    <div class="container text-center">
+      <h2>Ready for Australian Permanent Residence?</h2>
+      <p class="subtitle">Let our experts assess your eligibility and guide you through the GSM process.</p>
+      <div class="cta-buttons">
+        <a href="/contact" class="btn btn-primary">Get Started</a>
+      </div>
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+  .page-header {
+    background: var(--background);
+    border-bottom: 1px solid var(--border-light);
+    padding-top: 150px;
+    padding-bottom: 80px;
+  }
+  .uppercase-label {
+    display: inline-block;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    font-size: 0.9rem;
+  }
+  .subtitle {
+    margin-top: 20px;
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .content-grid {
+    display: grid;
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .content-section {
+    padding: 40px;
+    border-radius: 16px;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    box-shadow: var(--card-shadow);
+    position: relative;
+    overflow: hidden;
+  }
+  .content-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(124, 58, 237, 0.03), rgba(219, 39, 119, 0.03));
+    z-index: -1;
+  }
+  .section-icon {
+    font-size: 2.5rem;
+    margin-bottom: 24px;
+    color: var(--primary-purple);
+    opacity: 0.8;
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+  }
+  .content-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--text-main);
+    font-weight: 600;
+  }
+  .content-section p {
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 24px;
+    font-size: 1.1rem;
+  }
+  .highlight-box {
+    background: rgba(124, 58, 237, 0.05);
+    border: 1px solid rgba(124, 58, 237, 0.1);
+    border-radius: 12px;
+    padding: 24px;
+    margin-top: 24px;
+  }
+  .highlight-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .highlight-box li {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 12px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+  .highlight-box li::before {
+    content: 'check_circle';
+    position: absolute;
+    left: 0;
+    color: var(--primary-purple);
+    font-size: 1.2rem;
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+  }
+  .bg-darker {
+    background-color: var(--background);
+    border-top: 1px solid var(--border-light);
+  }
+  .cta-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--text-main);
+  }
+  .cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+  }
+  .btn {
+    padding: 16px 32px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-block;
+    font-size: 1.1rem;
+  }
+  .btn-primary {
+    background: var(--primary-gradient);
+    color: white;
+    border: none;
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(124, 58, 237, 0.3);
+  }
+  @media (max-width: 768px) {
+    .page-header { padding-top: 100px; padding-bottom: 60px; }
+    .content-section { padding: 24px; }
+    .content-section h2 { font-size: 1.5rem; }
+    .cta-section h2 { font-size: 2rem; }
+    .cta-buttons { flex-direction: column; align-items: center; }
+    .btn { width: 100%; max-width: 300px; }
+  }
+</style>

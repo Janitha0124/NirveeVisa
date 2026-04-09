@@ -3,11 +3,41 @@ const navLinks = [
   { name: 'Home', href: '/' },
   { 
     name: 'Programs', 
-    href: '/programs',
+    href: '#',
     dropdown: [
-      { name: 'PR Pathway', href: '/programs/pr-pathway' },
-      { name: 'Study Permit', href: '/programs/study-permit' },
-      { name: 'Job Seeker Visa', href: '/programs/job-seeker-visa' },
+      {
+        name: 'PR Pathway',
+        href: '#',
+        submenu: [
+          { name: 'Canada PR', href: '/programs/canada-pr' },
+          { name: 'Australia PR', href: '/programs/australia-pr' },
+          { name: 'New Zealand PR', href: '/programs/new-zealand-pr' },
+          { name: 'UK Settlement Visa', href: '/programs/uk-settlement' }
+        ]
+      },
+      { 
+        name: 'Study Permit', 
+        href: '#',
+        submenu: [
+          { name: 'Canada Student Visa', href: '/programs/canada-student-visa' },
+          { name: 'Ireland Student Visa', href: '/programs/ireland-student-visa' },
+          { name: 'Germany Student Visa', href: '/programs/germany-student-visa' },
+          { name: 'UK Student Visa', href: '/programs/uk-student-visa' },
+          { name: 'Netherlands Student Visa', href: '/programs/netherlands-student-visa' },
+          { name: 'New Zealand Student Visa', href: '/programs/new-zealand-student-visa' },
+          { name: 'Sweden Student Visa', href: '/programs/sweden-student-visa' }
+        ]
+      },
+      {
+        name: 'Job Seeker Visa',
+        href: '#',
+        submenu: [
+          { name: 'Germany Job Seeker Visa', href: '/programs/germany-job-seeker-visa' },
+          { name: 'Austria Job Seeker Visa', href: '/programs/austria-job-seeker-visa' },
+          { name: 'Portugal Job Seeker Visa', href: '/programs/portugal-job-seeker-visa' },
+          { name: 'UAE Job Seeker Visa', href: '/programs/uae-job-seeker-visa' }
+        ]
+      },
       { name: 'New Programs', href: '/programs/new-programs' }
     ]
   },
@@ -61,11 +91,42 @@ const navLinks = [
           <li key={link.name} class="nav-item">
             {link.dropdown ? (
               <>
-                <a href={link.href} class="nav-link dropdown-toggle">{link.name}</a>
+                {link.href === '#' ? (
+                  <span class="nav-link dropdown-toggle" style="cursor: default;">{link.name}</span>
+                ) : (
+                  <a href={link.href} class="nav-link dropdown-toggle">{link.name}</a>
+                )}
                 <ul class="dropdown-menu">
                   {link.dropdown.map(item => (
-                    <li key={item.name}>
-                      <a href={item.href} class="dropdown-link">{item.name}</a>
+                    <li key={item.name} class={item.submenu ? 'has-submenu' : ''}>
+                      {item.href === '#' ? (
+                        <span class="dropdown-link" style="cursor: default;">
+                          {item.name}
+                          {item.submenu && (
+                            <svg class="submenu-arrow" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                              <path d="M9.29 6.71c-.39.39-.39 1.02 0 1.41L13.17 12l-3.88 3.88c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l4.59-4.59c.39-.39.39-1.02 0-1.41L10.7 6.71c-.38-.39-1.01-.39-1.4 0z"/>
+                            </svg>
+                          )}
+                        </span>
+                      ) : (
+                        <a href={item.href} class="dropdown-link">
+                          {item.name}
+                          {item.submenu && (
+                            <svg class="submenu-arrow" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                              <path d="M9.29 6.71c-.39.39-.39 1.02 0 1.41L13.17 12l-3.88 3.88c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l4.59-4.59c.39-.39.39-1.02 0-1.41L10.7 6.71c-.38-.39-1.01-.39-1.4 0z"/>
+                            </svg>
+                          )}
+                        </a>
+                      )}
+                      {item.submenu && (
+                        <ul class="submenu">
+                          {item.submenu.map(subitem => (
+                            <li key={subitem.name}>
+                              <a href={subitem.href} class="submenu-link">{subitem.name}</a>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
                     </li>
                   ))}
                 </ul>
@@ -259,13 +320,12 @@ const navLinks = [
   }
 
   .dropdown-toggle::after {
-    content: '▼';
-    font-size: 0.7rem;
-    transition: transform 0.3s ease;
+    content: '';
+    font-size: 0;
   }
 
   .nav-item:hover .dropdown-toggle::after {
-    transform: rotate(180deg);
+    transform: none;
   }
 
   .dropdown-menu {
@@ -293,7 +353,10 @@ const navLinks = [
   }
 
   .dropdown-link {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
     padding: 10px 20px;
     color: var(--text-main);
     text-decoration: none;
@@ -309,6 +372,113 @@ const navLinks = [
   .dropdown-link:hover {
     color: var(--primary-purple);
     background: rgba(124, 58, 237, 0.05);
+  }
+
+  .submenu-arrow {
+    width: 16px;
+    height: 16px;
+    color: var(--text-muted);
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+    margin-left: 8px;
+  }
+
+  /* Submenu/Mega Menu Styles */
+  .has-submenu {
+    position: relative;
+  }
+
+  .has-submenu > .dropdown-link {
+    position: relative;
+  }
+
+  .submenu {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background: white;
+    min-width: 240px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    border: 1px solid var(--border-light);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-10px);
+    transition: all 0.2s ease;
+    z-index: 1001;
+    padding: 8px 0;
+    margin-left: 2px;
+    list-style: none;
+    display: block;
+  }
+
+  .has-submenu:hover > .submenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
+
+  .has-submenu:hover .submenu-arrow {
+    color: var(--primary-purple);
+    transform: rotate(180deg);
+  }
+
+  .has-submenu:hover > .dropdown-link {
+    color: var(--primary-purple);
+    background: rgba(124, 58, 237, 0.05);
+  }
+
+  .submenu li {
+    display: block;
+    width: 100%;
+  }
+
+  .submenu-link {
+    display: block;
+    padding: 12px 20px;
+    color: var(--text-main);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 400;
+    transition: all 0.3s ease;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    border-bottom: 1px solid var(--border-light);
+    white-space: nowrap;
+  }
+
+  .submenu li:last-child .submenu-link {
+    border-bottom: none;
+  }
+
+  .submenu-link:hover {
+    color: var(--primary-purple);
+    background: rgba(124, 58, 237, 0.05);
+  }
+
+  /* Active/Current indicator - red minus sign */
+  .has-submenu > .dropdown-link::before {
+    content: '−';
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #dc2626;
+    font-weight: bold;
+    font-size: 1.2rem;
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+
+  .has-submenu:hover > .dropdown-link::before {
+    opacity: 1;
+  }
+
+  .has-submenu:hover > .dropdown-link {
+    color: #dc2626;
+    padding-left: 24px;
   }
 
   /* Mobile */

@@ -1,0 +1,229 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+---
+
+<MainLayout title="Germany Job Seeker Visa" description="Germany Job Seeker Visa application requirements and process">
+  <section class="page-header section-padding">
+    <div class="container text-center">
+      <span class="gold-text uppercase-label">Job Seeker Visa</span>
+      <h1>Germany Job Seeker Visa</h1>
+      <p class="subtitle">Secure employment in Europe's largest economy with the Germany Job Seeker Visa.</p>
+    </div>
+  </section>
+
+  <section class="visitor-visa-content section-padding">
+    <div class="container">
+      <div class="content-grid">
+        <div class="glass-card content-section">
+          <div class="section-icon">work</div>
+          <h2>Eligibility Requirements</h2>
+          <div class="highlight-box">
+            <ul>
+              <li>Recognized university degree (bachelor's or higher)</li>
+              <li>Minimum 5 years of relevant work experience</li>
+              <li>Sufficient funds to cover living expenses</li>
+              <li>Comprehensive health insurance coverage</li>
+              <li>Proof of accommodation in Germany</li>
+              <li>Basic German language skills (preferred)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="glass-card content-section">
+          <div class="section-icon">attach_money</div>
+          <h2>Financial Requirements</h2>
+          <p>You must demonstrate sufficient funds:</p>
+          <div class="highlight-box">
+            <ul>
+              <li>Blocked account with approximately €11,904 per year</li>
+              <li>Or sponsorship letter from a German resident</li>
+              <li>Bank statements showing consistent income</li>
+              <li>Funds must cover entire 6-month stay</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="glass-card content-section">
+          <div class="section-icon">schedule</div>
+          <h2>Duration & Conditions</h2>
+          <p>The Germany Job Seeker Visa is valid for:</p>
+          <div class="highlight-box">
+            <ul>
+              <li>Initial validity: 6 months</li>
+              <li>Cannot be extended under same visa category</li>
+              <li>Must find employment within validity period</li>
+              <li>Upon job offer, convert to EU Blue Card or work permit</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="glass-card content-section">
+          <div class="section-icon">groups</div>
+          <h2>Application Process</h2>
+          <p>Steps to apply:</p>
+          <div class="highlight-box">
+            <ul>
+              <li>Book appointment at German Embassy/Consulate</li>
+              <li>Prepare documentation (degree, experience, funds)</li>
+              <li>Submit application with visa fee (€75)</li>
+              <li>Processing time: 4-12 weeks</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section section-padding bg-darker">
+    <div class="container text-center">
+      <h2>Ready to Work in Germany?</h2>
+      <p class="subtitle">Let our experts guide you through the Germany Job Seeker Visa process.</p>
+      <div class="cta-buttons">
+        <a href="/contact" class="btn btn-primary">Get Started</a>
+      </div>
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+  .page-header {
+    background: var(--background);
+    border-bottom: 1px solid var(--border-light);
+    padding-top: 150px;
+    padding-bottom: 80px;
+  }
+  .uppercase-label {
+    display: inline-block;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    font-size: 0.9rem;
+  }
+  .subtitle {
+    margin-top: 20px;
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .content-grid {
+    display: grid;
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .content-section {
+    padding: 40px;
+    border-radius: 16px;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    box-shadow: var(--card-shadow);
+    position: relative;
+    overflow: hidden;
+  }
+  .content-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(124, 58, 237, 0.03), rgba(219, 39, 119, 0.03));
+    z-index: -1;
+  }
+  .section-icon {
+    font-size: 2.5rem;
+    margin-bottom: 24px;
+    color: var(--primary-purple);
+    opacity: 0.8;
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+  }
+  .content-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--text-main);
+    font-weight: 600;
+  }
+  .content-section p {
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 24px;
+    font-size: 1.1rem;
+  }
+  .highlight-box {
+    background: rgba(124, 58, 237, 0.05);
+    border: 1px solid rgba(124, 58, 237, 0.1);
+    border-radius: 12px;
+    padding: 24px;
+    margin-top: 24px;
+  }
+  .highlight-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .highlight-box li {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 12px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+  .highlight-box li::before {
+    content: 'check_circle';
+    position: absolute;
+    left: 0;
+    color: var(--primary-purple);
+    font-size: 1.2rem;
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+  }
+  .bg-darker {
+    background-color: var(--background);
+    border-top: 1px solid var(--border-light);
+  }
+  .cta-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--text-main);
+  }
+  .cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+  }
+  .btn {
+    padding: 16px 32px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-block;
+    font-size: 1.1rem;
+  }
+  .btn-primary {
+    background: var(--primary-gradient);
+    color: white;
+    border: none;
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(124, 58, 237, 0.3);
+  }
+  @media (max-width: 768px) {
+    .page-header { padding-top: 100px; padding-bottom: 60px; }
+    .content-section { padding: 24px; }
+    .content-section h2 { font-size: 1.5rem; }
+    .cta-section h2 { font-size: 2rem; }
+    .cta-buttons { flex-direction: column; align-items: center; }
+    .btn { width: 100%; max-width: 300px; }
+  }
+</style>
