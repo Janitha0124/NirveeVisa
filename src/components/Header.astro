@@ -77,11 +77,18 @@ const navLinks = [
 <header class="header">
   <div class="container nav-container">
     <div class="logo-container">
-      <div class="logo">
-        <a href="/">Nirvee <span class="logo-accent">Visa</span></a>
-      </div>
-      <div class="logo-sub">
-        VISA & IMMIGRATION EXPERTS PVT LTD
+      <div class="logo-wrapper">
+        <div class="logo-icon">
+          <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="#08328f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <div class="logo-text">
+          <div class="logo">
+            <a href="/"><span class="logo-blue">Nirvee</span> <span class="logo-accent">Visa</span></a>
+          </div>
+          <div class="logo-sub">
+            VISA & IMMIGRATION EXPERTS PVT LTD
+          </div>
+        </div>
       </div>
     </div>
 
@@ -254,6 +261,24 @@ const navLinks = [
     line-height: 1.1;
   }
 
+  .logo-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .logo-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+  }
+
   .logo a {
     color: var(--text-main);
     font-size: 1.8rem;
@@ -262,8 +287,12 @@ const navLinks = [
     text-decoration: none;
   }
 
+  .logo-blue {
+    color: #08328f; /* Blue color */
+  }
+
   .logo-accent {
-    color: #C5A021; /* Authentic Gold from branding */
+    color: #f1c73d; /* Authentic Gold from branding */
   }
 
   .logo-sub {
