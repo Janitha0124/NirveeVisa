@@ -338,8 +338,124 @@ const services = [
     margin-bottom: 0;
   }
 
+  @media (max-width: 992px) {
+    .page-header {
+      padding-top: 120px;
+      padding-bottom: 60px;
+    }
+    .services-grid {
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+    .service-card {
+      min-height: 260px;
+      padding: 28px;
+    }
+    .service-card h3 {
+      font-size: 1.4rem;
+    }
+    .process-grid {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+    }
+    .step-num {
+      font-size: 2.5rem;
+    }
+  }
+
   @media (max-width: 768px) {
-    .page-header { padding-top: 100px; }
-    .process-grid { grid-template-columns: 1fr; }
+    .page-header {
+      padding-top: 100px;
+      padding-bottom: 50px;
+    }
+    .subtitle {
+      font-size: 1.1rem;
+    }
+    .services-grid {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    .service-card {
+      min-height: auto;
+      padding: 24px;
+    }
+    .icon-wrapper {
+      width: 56px;
+      height: 56px;
+      margin-bottom: 20px;
+    }
+    .icon-wrapper .material-icons {
+      font-size: 1.75rem;
+    }
+    .service-card h3 {
+      font-size: 1.3rem;
+    }
+    .service-card p {
+      font-size: 0.95rem;
+    }
+    .process-grid {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    .process-step {
+      padding: 24px;
+    }
+    .step-num {
+      font-size: 2rem;
+      margin-bottom: 16px;
+    }
+    .process-step h3 {
+      font-size: 1.2rem;
+    }
+    .process-step p {
+      font-size: 0.9rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .page-header {
+      padding-top: 80px;
+      padding-bottom: 40px;
+    }
+    .page-header h1 {
+      font-size: 1.75rem;
+    }
+    .uppercase-label {
+      font-size: 0.8rem;
+    }
+    .subtitle {
+      font-size: 1rem;
+    }
+    .service-card {
+      padding: 20px;
+    }
+    .service-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+    }
+    .service-card p {
+      font-size: 0.9rem;
+    }
+    .icon-wrapper {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 16px;
+    }
+    .icon-wrapper .material-icons {
+      font-size: 1.5rem;
+    }
+    .card-arrow {
+      bottom: 16px;
+      right: 16px;
+    }
+    .process-step {
+      padding: 20px;
+    }
+    .step-num {
+      font-size: 1.75rem;
+    }
+    .process-step h3 {
+      font-size: 1.1rem;
+    }
   }
 </style>

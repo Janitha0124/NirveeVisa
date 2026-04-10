@@ -148,9 +148,93 @@ import MainLayout from '../layouts/MainLayout.astro';
     text-align: center;
   }
 
-  @media (max-width: 600px) {
-    .assessment-card { padding: 30px; }
-    .grid-2-form { grid-template-columns: 1fr; }
-    .page-header { padding-top: 100px; }
+  @media (max-width: 768px) {
+    .page-header {
+      padding-top: 100px;
+      padding-bottom: 50px;
+    }
+    .assessment-card {
+      padding: 30px 24px;
+    }
+    .form-progress {
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+    .step {
+      width: 35px;
+      height: 35px;
+      font-size: 0.9rem;
+    }
+    .line {
+      width: 30px;
+    }
+    .step-content h3 {
+      font-size: 1.3rem;
+      margin-bottom: 24px;
+    }
+    .grid-2-form {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    .form-group {
+      margin-bottom: 16px;
+    }
+    .form-group label {
+      font-size: 0.95rem;
+    }
+    input {
+      padding: 12px 16px;
+      font-size: 16px; /* Prevents zoom on iOS */
+    }
+    .disclaimer {
+      margin-top: 30px;
+      font-size: 0.8rem;
+    }
+    .narrow-container {
+      padding: 0 16px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .page-header {
+      padding-top: 80px;
+      padding-bottom: 40px;
+    }
+    .page-header h1 {
+      font-size: 1.75rem;
+    }
+    .subtitle {
+      font-size: 1rem;
+    }
+    .assessment-card {
+      padding: 24px 16px;
+      border-radius: 16px;
+    }
+    .form-progress {
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+    .step {
+      width: 32px;
+      height: 32px;
+      font-size: 0.85rem;
+    }
+    .line {
+      width: 20px;
+    }
+    .step-content h3 {
+      font-size: 1.2rem;
+    }
+    input {
+      padding: 10px 14px;
+      border-radius: 40px;
+    }
+    .btn {
+      padding: 12px 20px;
+      font-size: 0.95rem;
+    }
+    .disclaimer p {
+      font-size: 0.75rem;
+    }
   }
 </style>

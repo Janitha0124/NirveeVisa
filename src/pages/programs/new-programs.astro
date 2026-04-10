@@ -155,8 +155,53 @@ const programs = [
     gap: 30px;
   }
 
+  @media (max-width: 992px) {
+    .page-header {
+      padding-top: 120px;
+      padding-bottom: 60px;
+    }
+    .programs-grid {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+  }
+
   @media (max-width: 768px) {
-    .programs-grid { grid-template-columns: 1fr; }
-    .page-header { padding-top: 100px; }
+    .page-header {
+      padding-top: 100px;
+      padding-bottom: 50px;
+    }
+    .page-header h1 {
+      font-size: 1.75rem;
+    }
+    .uppercase-label {
+      font-size: 0.8rem;
+    }
+    .subtitle {
+      font-size: 1rem;
+    }
+    .programs-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    .section-padding {
+      padding: 50px 0;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .page-header {
+      padding-top: 80px;
+      padding-bottom: 40px;
+    }
+    .page-header h1 {
+      font-size: 1.5rem;
+    }
+    .subtitle {
+      font-size: 0.9rem;
+    }
+    .programs-grid {
+      gap: 16px;
+    }
   }
 </style>

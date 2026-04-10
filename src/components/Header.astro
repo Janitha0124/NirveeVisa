@@ -147,13 +147,85 @@ const navLinks = [
       <a href="/contact" class="btn btn-primary btn-sm">Start Journey</a>
     </nav>
 
-    <div class="mobile-menu-btn">
+    <div class="mobile-menu-btn" id="mobileMenuBtn">
       <span></span>
       <span></span>
       <span></span>
     </div>
   </div>
 </header>
+
+<!-- Mobile Menu Overlay -->
+<div class="mobile-menu-overlay" id="mobileMenuOverlay">
+  <div class="mobile-menu">
+    <div class="mobile-menu-header">
+      <div class="logo-wrapper">
+        <div class="logo-icon">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#08328f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <div class="logo-text">
+          <div class="mobile-logo">
+            <span class="logo-blue">Nirvee</span> <span class="logo-accent">Visa</span>
+          </div>
+        </div>
+      </div>
+      <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <nav class="mobile-nav">
+      <ul class="mobile-nav-list">
+        <li><a href="/" class="mobile-nav-link">Home</a></li>
+        <li class="mobile-dropdown">
+          <button class="mobile-nav-link mobile-dropdown-toggle" aria-expanded="false">
+            Programs
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M7 10l5 5 5-5z"/></svg>
+          </button>
+          <ul class="mobile-submenu">
+            <li class="mobile-submenu-category">
+              <span class="mobile-submenu-title">PR Pathway</span>
+              <ul class="mobile-submenu-items">
+                <li><a href="/programs/canada-pr">Canada PR</a></li>
+                <li><a href="/programs/australia-pr">Australia PR</a></li>
+                <li><a href="/programs/new-zealand-pr">New Zealand PR</a></li>
+                <li><a href="/programs/uk-settlement">UK Settlement Visa</a></li>
+              </ul>
+            </li>
+            <li class="mobile-submenu-category">
+              <span class="mobile-submenu-title">Study Permit</span>
+              <ul class="mobile-submenu-items">
+                <li><a href="/programs/canada-student-visa">Canada Student Visa</a></li>
+                <li><a href="/programs/ireland-student-visa">Ireland Student Visa</a></li>
+                <li><a href="/programs/germany-student-visa">Germany Student Visa</a></li>
+                <li><a href="/programs/uk-student-visa">UK Student Visa</a></li>
+                <li><a href="/programs/netherlands-student-visa">Netherlands Student Visa</a></li>
+                <li><a href="/programs/new-zealand-student-visa">New Zealand Student Visa</a></li>
+                <li><a href="/programs/sweden-student-visa">Sweden Student Visa</a></li>
+              </ul>
+            </li>
+            <li class="mobile-submenu-category">
+              <span class="mobile-submenu-title">Job Seeker Visa</span>
+              <ul class="mobile-submenu-items">
+                <li><a href="/programs/germany-job-seeker-visa">Germany Job Seeker Visa</a></li>
+                <li><a href="/programs/austria-job-seeker-visa">Austria Job Seeker Visa</a></li>
+                <li><a href="/programs/portugal-job-seeker-visa">Portugal Job Seeker Visa</a></li>
+                <li><a href="/programs/uae-job-seeker-visa">UAE Job Seeker Visa</a></li>
+              </ul>
+            </li>
+            <li class="mobile-submenu-category">
+              <a href="/programs/new-programs" class="mobile-submenu-title-link">New Programs</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="/services" class="mobile-nav-link">Services</a></li>
+        <li><a href="/testimonials" class="mobile-nav-link">Testimonials</a></li>
+        <li><a href="/about" class="mobile-nav-link">About Us</a></li>
+        <li><a href="/contact" class="mobile-nav-link">Contact Us</a></li>
+      </ul>
+      <a href="/contact" class="btn btn-primary mobile-cta">Start Your Journey</a>
+    </nav>
+  </div>
+</div>
 
 <style>
   /* Top Bar Styles */
@@ -519,10 +591,16 @@ const navLinks = [
     .nav {
       display: none;
     }
+    
+    .nav-container {
+      padding: 0 10px;
+    }
+    
     .mobile-menu-btn {
       display: flex;
       flex-direction: column;
       gap: 6px;
+      margin-right: -8px;
     }
     .mobile-menu-btn span {
       width: 28px;
@@ -543,4 +621,320 @@ const navLinks = [
       align-items: center;
     }
   }
+
+  /* Mobile Menu Styles */
+  .mobile-menu-btn {
+    display: none; /* Hidden by default on desktop */
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 12px;
+    margin: -4px;
+    z-index: 9999;
+    background: transparent;
+    border: none;
+    position: relative;
+    min-width: 44px;
+    min-height: 44px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Show mobile menu button on tablet and below */
+  @media (max-width: 992px) {
+    .mobile-menu-btn {
+      display: flex !important;
+    }
+  }
+
+  .mobile-menu-btn span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-main);
+    transition: all 0.3s ease;
+    border-radius: 2px;
+    pointer-events: none;
+  }
+
+  .mobile-menu-btn.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .mobile-menu-btn.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .mobile-menu-btn.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+  .mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .mobile-menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 85%;
+    max-width: 360px;
+    height: 100%;
+    background: var(--white);
+    z-index: 2001;
+    transition: right 0.3s ease;
+    overflow-y: auto;
+    box-shadow: -5px 0 30px rgba(0, 0, 0, 0.2);
+  }
+
+  .mobile-menu-overlay.active .mobile-menu {
+    right: 0;
+  }
+
+  .mobile-menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid var(--border-light);
+    background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%);
+  }
+
+  .mobile-menu-close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    color: var(--text-main);
+    transition: all 0.3s ease;
+    border-radius: 8px;
+  }
+
+  .mobile-menu-close:hover {
+    background: rgba(124, 58, 237, 0.1);
+  }
+
+  .mobile-logo {
+    font-size: 1.4rem;
+    font-weight: 800;
+  }
+
+  .mobile-nav {
+    padding: 20px;
+  }
+
+  .mobile-nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .mobile-nav-list > li {
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .mobile-nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0;
+    color: var(--text-main);
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .mobile-nav-link:hover {
+    color: var(--primary-purple);
+  }
+
+  .mobile-dropdown-toggle {
+    width: 100%;
+    background: none;
+    border: none;
+    font-family: inherit;
+    cursor: pointer;
+  }
+
+  .mobile-dropdown-toggle svg {
+    transition: transform 0.3s ease;
+  }
+
+  .mobile-dropdown.open .mobile-dropdown-toggle svg {
+    transform: rotate(180deg);
+  }
+
+  .mobile-submenu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    list-style: none;
+    padding: 0 0 0 16px;
+  }
+
+  .mobile-dropdown.open .mobile-submenu {
+    max-height: 800px;
+  }
+
+  .mobile-submenu-category {
+    padding: 8px 0;
+  }
+
+  .mobile-submenu-title {
+    display: block;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--primary-purple);
+    padding: 8px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .mobile-submenu-title-link {
+    display: block;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--primary-purple);
+    padding: 8px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+  }
+
+  .mobile-submenu-items {
+    list-style: none;
+    padding: 0 0 0 12px;
+  }
+
+  .mobile-submenu-items li {
+    padding: 4px 0;
+  }
+
+  .mobile-submenu-items a {
+    display: block;
+    padding: 8px 0;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .mobile-submenu-items a:hover {
+    color: var(--primary-purple);
+    padding-left: 8px;
+  }
+
+  .mobile-cta {
+    display: block;
+    margin-top: 24px;
+    text-align: center;
+    padding: 16px 24px;
+    font-size: 1rem;
+  }
+
+  body.menu-open {
+    overflow: hidden;
+  }
 </style>
+
+<script is:inline>
+  // Use a flag to track if menu is initialized
+  if (!window.mobileMenuInitialized) {
+    window.mobileMenuInitialized = true;
+    
+    function openMenu() {
+      const overlay = document.getElementById('mobileMenuOverlay');
+      const btn = document.getElementById('mobileMenuBtn');
+      if (overlay) overlay.classList.add('active');
+      if (btn) btn.classList.add('active');
+      document.body.classList.add('menu-open');
+    }
+
+    function closeMenu() {
+      const overlay = document.getElementById('mobileMenuOverlay');
+      const btn = document.getElementById('mobileMenuBtn');
+      if (overlay) overlay.classList.remove('active');
+      if (btn) btn.classList.remove('active');
+      document.body.classList.remove('menu-open');
+      // Close all dropdowns
+      document.querySelectorAll('.mobile-dropdown').forEach(d => d.classList.remove('open'));
+    }
+
+    // Event delegation for the entire document
+    document.addEventListener('click', function(e) {
+      const btn = e.target.closest('#mobileMenuBtn');
+      const overlay = e.target.closest('#mobileMenuOverlay');
+      const closeBtn = e.target.closest('#mobileMenuClose');
+      const link = e.target.closest('.mobile-nav a, .mobile-submenu a, .mobile-submenu-title-link');
+      const dropdownToggle = e.target.closest('.mobile-dropdown-toggle');
+      
+      if (btn) {
+        e.preventDefault();
+        const o = document.getElementById('mobileMenuOverlay');
+        if (o && o.classList.contains('active')) {
+          closeMenu();
+        } else {
+          openMenu();
+        }
+      }
+      
+      if (closeBtn) {
+        e.preventDefault();
+        closeMenu();
+      }
+      
+      if (link) {
+        closeMenu();
+      }
+      
+      if (dropdownToggle) {
+        e.preventDefault();
+        e.stopPropagation();
+        const parent = dropdownToggle.parentElement;
+        const isOpen = parent.classList.contains('open');
+        
+        // Close all dropdowns
+        document.querySelectorAll('.mobile-dropdown').forEach(d => {
+          d.classList.remove('open');
+          const b = d.querySelector('.mobile-dropdown-toggle');
+          if (b) b.setAttribute('aria-expanded', 'false');
+        });
+        
+        // Open this one if it was closed
+        if (!isOpen) {
+          parent.classList.add('open');
+          dropdownToggle.setAttribute('aria-expanded', 'true');
+        }
+      }
+      
+      // Close when clicking overlay background
+      if (e.target.id === 'mobileMenuOverlay') {
+        closeMenu();
+      }
+    });
+
+    // Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        const overlay = document.getElementById('mobileMenuOverlay');
+        if (overlay && overlay.classList.contains('active')) {
+          closeMenu();
+        }
+      }
+    });
+  }
+</script>

@@ -35,11 +35,11 @@ const { title, subtitle, ctaText, ctaLink } = Astro.props;
         {subtitle}
       </p>
       
-      <div style="display: flex; justify-content: center; gap: 20px;">
-        <a href={ctaLink} style="padding: 18px 40px; background: linear-gradient(135deg, #7C3AED 0%, #DB2777 100%); color: white; border-radius: 50px; font-weight: 700; text-decoration: none; box-shadow: 0 10px 25px rgba(124, 58, 237, 0.3);">
+      <div class="hero-buttons">
+        <a href={ctaLink} class="hero-btn hero-btn-primary">
           Consult With Us
         </a>
-        <a href="/programs/new-programs" style="padding: 18px 40px; background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(10px); border: 2px solid rgba(255, 255, 255, 0.8); color: #ffffff; border-radius: 50px; font-weight: 700; text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+        <a href="/programs/new-programs" class="hero-btn hero-btn-outline">
           Explore Programs
         </a>
       </div>
@@ -49,7 +49,82 @@ const { title, subtitle, ctaText, ctaLink } = Astro.props;
 </section>
 
 <style is:inline>
+  /* Hero Button Styles */
+  .hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .hero-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 18px 40px;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    text-align: center;
+    min-width: 180px;
+  }
+
+  .hero-btn-primary {
+    background: linear-gradient(135deg, #7C3AED 0%, #DB2777 100%);
+    color: white;
+    box-shadow: 0 10px 25px rgba(124, 58, 237, 0.3);
+  }
+
+  .hero-btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(124, 58, 237, 0.4);
+  }
+
+  .hero-btn-outline {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  }
+
+  .hero-btn-outline:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-3px);
+  }
+
+  @media (max-width: 640px) {
+    .hero-buttons {
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .hero-btn {
+      width: 100%;
+      max-width: 280px;
+      padding: 16px 30px;
+      font-size: 0.95rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-btn {
+      padding: 14px 24px;
+      font-size: 0.9rem;
+      min-width: auto;
+    }
+  }
+
   /* Background Slideshow Styles */
+  #hero-architectural {
+    width: 100vw;
+    max-width: 100%;
+    left: 0;
+    right: 0;
+  }
+
   .hero-slideshow {
     position: absolute;
     top: 0;
@@ -57,6 +132,7 @@ const { title, subtitle, ctaText, ctaLink } = Astro.props;
     width: 100%;
     height: 100%;
     z-index: 1;
+    overflow: hidden;
   }
 
   .hero-slideshow .slide {

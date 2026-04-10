@@ -368,22 +368,98 @@ import ContactForm from '../components/ContactForm.astro';
     margin: 0;
   }
 
+  @media (max-width: 992px) {
+    .grid-2 {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    .contact-info h2 {
+      font-size: 1.8rem;
+    }
+    .contact-info .lead {
+      font-size: 1.1rem;
+    }
+    .mt-40 {
+      margin-top: 30px;
+    }
+    .info-blocks {
+      gap: 24px;
+    }
+    .info-item {
+      gap: 16px;
+    }
+    .icon-wrapper {
+      width: 50px;
+      height: 50px;
+    }
+    .icon {
+      font-size: 1.5rem;
+    }
+  }
+
   @media (max-width: 768px) {
+    .page-header {
+      padding-top: 100px;
+      padding-bottom: 60px;
+    }
+    .grid-2 {
+      gap: 30px;
+    }
+    .contact-info h2 {
+      font-size: 1.6rem;
+    }
+    .contact-info .lead {
+      font-size: 1rem;
+    }
+    .info-item {
+      flex-direction: column;
+      gap: 12px;
+      text-align: center;
+    }
+    .icon-wrapper {
+      margin: 0 auto;
+    }
     .faq-question {
       padding: 18px 20px;
       font-size: 1rem;
     }
-
     .faq-answer {
       padding: 0 20px;
     }
-
     .faq-item.active .faq-answer {
       padding: 0 20px 18px 20px;
     }
-
     .faq-icon {
       font-size: 1.3rem;
+    }
+    .map-container {
+      height: 300px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .page-header {
+      padding-top: 80px;
+      padding-bottom: 50px;
+    }
+    .contact-info h2 {
+      font-size: 1.4rem;
+    }
+    .info-item h4 {
+      font-size: 1rem;
+    }
+    .info-item p {
+      font-size: 0.9rem;
+    }
+    .faq-question {
+      padding: 14px 16px;
+      font-size: 0.95rem;
+    }
+    .faq-answer p {
+      font-size: 0.9rem;
+    }
+    .map-container {
+      height: 250px;
     }
   }
 </style>
