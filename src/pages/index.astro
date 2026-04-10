@@ -327,6 +327,8 @@ const services = [
             <a href="/programs/new-programs" class="program-carousel-card" data-img="f4.webp" style="background-image: url('/f4.webp');"></a>
             <a href="/programs/new-programs" class="program-carousel-card" data-img="f5.webp" style="background-image: url('/f5.webp');"></a>
             <a href="/programs/new-programs" class="program-carousel-card" data-img="f6.webp" style="background-image: url('/f6.webp');"></a>
+            <a href="/programs/new-programs" class="program-carousel-card" data-img="post1.webp" style="background-image: url('/post1.webp');"></a>
+            <a href="/programs/new-programs" class="program-carousel-card" data-img="post2.webp" style="background-image: url('/post2.webp');"></a>
             <!-- Cloned for seamless loop -->
             <a href="/programs/new-programs" class="program-carousel-card" data-img="f1.webp" style="background-image: url('/f1.webp');"></a>
             <a href="/programs/new-programs" class="program-carousel-card" data-img="f2.webp" style="background-image: url('/f2.webp');"></a>
@@ -334,6 +336,25 @@ const services = [
             <a href="/programs/new-programs" class="program-carousel-card" data-img="f4.webp" style="background-image: url('/f4.webp');"></a>
             <a href="/programs/new-programs" class="program-carousel-card" data-img="f5.webp" style="background-image: url('/f5.webp');"></a>
             <a href="/programs/new-programs" class="program-carousel-card" data-img="f6.webp" style="background-image: url('/f6.webp');"></a>
+            <a href="/programs/new-programs" class="program-carousel-card" data-img="post1.webp" style="background-image: url('/post1.webp');"></a>
+            <a href="/programs/new-programs" class="program-carousel-card" data-img="post2.webp" style="background-image: url('/post2.webp');"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="recent-success section-padding">
+    <div class="container">
+      <h2 class="section-title">Our Recent Success</h2>
+      <div class="programs-carousel-wrapper">
+        <div class="programs-carousel">
+          <div class="programs-carousel-track" id="successCarousel">
+            <div class="program-carousel-card" data-img="recent-1.webp" style="background-image: url('/recent-1.webp');"></div>
+            <div class="program-carousel-card" data-img="recent-2.webp" style="background-image: url('/recent-2.webp');"></div>
+            <!-- Cloned for seamless loop -->
+            <div class="program-carousel-card" data-img="recent-1.webp" style="background-image: url('/recent-1.webp');"></div>
+            <div class="program-carousel-card" data-img="recent-2.webp" style="background-image: url('/recent-2.webp');"></div>
           </div>
         </div>
       </div>
@@ -1234,7 +1255,7 @@ const services = [
   .programs-carousel-track {
     display: flex;
     gap: 25px;
-    animation: programs-scroll 20s linear infinite;
+    animation: programs-scroll 28s linear infinite;
   }
 
   .programs-carousel-track:hover {
@@ -1287,6 +1308,51 @@ const services = [
     }
     .recent-programs .section-title {
       font-size: 2rem;
+    }
+    .recent-success .section-title {
+      font-size: 2rem;
+    }
+  }
+
+  /* Recent Success Section - Centered like Services */
+  .recent-success {
+    background: var(--bg-secondary, #f8f9fa);
+    padding: 80px 0;
+  }
+
+  .recent-success .section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 50px;
+  }
+
+  .recent-success .programs-carousel-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .recent-success .program-carousel-card {
+    flex: 0 0 calc(50% - 13px);
+    min-width: calc(50% - 13px);
+    aspect-ratio: 5/4;
+  }
+
+  @media (max-width: 992px) {
+    .recent-success .program-carousel-card {
+      flex: 0 0 calc(50% - 13px);
+      min-width: calc(50% - 13px);
+    }
+  }
+
+  @media (max-width: 576px) {
+    .recent-success .program-carousel-card {
+      flex: 0 0 100%;
+      min-width: 100%;
+    }
+    .recent-success .section-title {
+      font-size: 1.8rem;
     }
   }
 
