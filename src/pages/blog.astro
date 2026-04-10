@@ -163,6 +163,70 @@ const posts = [
     font-family: inherit;
   }
 
+  @media (max-width: 768px) {
+    .page-header {
+      padding-top: 100px;
+      padding-bottom: 50px;
+    }
+    .page-header h1 {
+      font-size: 1.75rem;
+    }
+    .subtitle {
+      font-size: 1rem;
+    }
+    .blog-grid {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    .post-content {
+      padding: 20px;
+    }
+    .post-content h3 {
+      font-size: 1.2rem;
+    }
+    .post-thumb {
+      height: 180px;
+    }
+    .glass-form {
+      padding: 30px 20px;
+      border-radius: 12px;
+    }
+    .newsletter h2 {
+      font-size: 1.5rem;
+    }
+    .section-padding {
+      padding: 50px 0;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .page-header {
+      padding-top: 80px;
+      padding-bottom: 40px;
+    }
+    .page-header h1 {
+      font-size: 1.5rem;
+    }
+    .subtitle {
+      font-size: 0.9rem;
+    }
+    .post-content {
+      padding: 16px;
+    }
+    .post-content h3 {
+      font-size: 1.1rem;
+    }
+    .post-content p {
+      font-size: 0.9rem;
+    }
+    .post-thumb {
+      height: 160px;
+    }
+    .glass-form {
+      padding: 24px 16px;
+    }
+  }
+
   @media (max-width: 600px) {
     .news-form { flex-direction: column; }
     .news-form input { width: 100%; }

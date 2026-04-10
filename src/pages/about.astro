@@ -5,7 +5,7 @@ import MainLayout from '../layouts/MainLayout.astro';
 <MainLayout title="About Us" description="Discover the elite firm behind thousands of successful global transitions.">
   <section class="page-header section-padding" style="background-image: url('/emigration.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
     <div class="container text-center">
-      <span class="gold-text uppercase-label" style="color: white;">The Firm</span>
+      <span class="uppercase-label" style="color: rgb(244, 218, 244);">The Firm</span>
       <h1 style="color: white;">Excellence in Global Mobility</h1>
       <p class="subtitle" style="color: white;">Empowering your global journey through empathy, diverse language support, and a shared immigrant background.</p>
     </div>
@@ -96,12 +96,14 @@ import MainLayout from '../layouts/MainLayout.astro';
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    background: var(--card-bg);
   }
 
   .about-logo {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    padding: 20px;
   }
 
   .image-placeholder {
@@ -206,8 +208,11 @@ import MainLayout from '../layouts/MainLayout.astro';
       font-size: 1.1rem;
     }
     .logo-container {
-      height: 300px;
+      height: 350px;
       border-radius: 12px;
+    }
+    .about-logo {
+      padding: 16px;
     }
     .team-grid {
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -238,7 +243,10 @@ import MainLayout from '../layouts/MainLayout.astro';
       margin-bottom: 16px;
     }
     .logo-container {
-      height: 250px;
+      height: 300px;
+    }
+    .about-logo {
+      padding: 12px;
     }
     .value-item {
       flex-direction: column;

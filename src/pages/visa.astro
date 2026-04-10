@@ -147,6 +147,69 @@ const countries = [
   .visa-detail-item p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; }
 
   @media (max-width: 768px) {
-    .visa-detail-grid { grid-template-columns: 1fr; }
+    .page-header {
+      padding-top: 100px;
+      padding-bottom: 50px;
+    }
+    .page-header h1 {
+      font-size: 1.75rem;
+    }
+    .subtitle {
+      font-size: 1rem;
+    }
+    .visa-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    .visa-card {
+      padding: 24px;
+    }
+    .visa-icon {
+      width: 60px;
+      height: 60px;
+      font-size: 1.75rem;
+    }
+    .visa-card h3 {
+      font-size: 1.2rem;
+    }
+    .visa-detail-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .visa-detail-item {
+      padding: 20px;
+    }
+    .section-padding {
+      padding: 50px 0;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .page-header {
+      padding-top: 80px;
+      padding-bottom: 40px;
+    }
+    .page-header h1 {
+      font-size: 1.5rem;
+    }
+    .subtitle {
+      font-size: 0.9rem;
+    }
+    .visa-card {
+      padding: 20px;
+      border-radius: 12px;
+    }
+    .visa-icon {
+      width: 50px;
+      height: 50px;
+      font-size: 1.5rem;
+    }
+    .visa-detail-item {
+      padding: 16px;
+    }
+    .visa-detail-item h3 {
+      font-size: 1.1rem;
+    }
   }
 </style>

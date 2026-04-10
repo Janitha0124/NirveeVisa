@@ -108,31 +108,6 @@ const services = [
     </div>
   </section>
 
-  <section class="recent-programs section-padding">
-    <div class="container">
-      <h2 class="section-title">Our Recent Programs</h2>
-      <div class="programs-carousel-wrapper">
-        <div class="programs-carousel">
-          <div class="programs-carousel-track" id="programsCarousel">
-            <a href="/programs/new-programs" class="program-carousel-card" data-img="f1.jpg" style="background-image: url('/f1.jpg');"></a>
-            <a href="/programs/new-programs" class="program-carousel-card" data-img="f2.jpg" style="background-image: url('/f2.jpg');"></a>
-            <a href="/programs/new-programs" class="program-carousel-card" data-img="f3.jpg" style="background-image: url('/f3.jpg');"></a>
-            <a href="/programs/new-programs" class="program-carousel-card" data-img="f4.jpg" style="background-image: url('/f4.jpg');"></a>
-            <a href="/programs/new-programs" class="program-carousel-card" data-img="f5.jpg" style="background-image: url('/f5.jpg');"></a>
-            <a href="/programs/new-programs" class="program-carousel-card" data-img="f6.jpg" style="background-image: url('/f6.jpg');"></a>
-            <!-- Cloned for seamless loop -->
-            <a href="/programs/new-programs" class="program-carousel-card" data-img="f1.jpg" style="background-image: url('/f1.jpg');"></a>
-            <a href="/programs/new-programs" class="program-carousel-card" data-img="f2.jpg" style="background-image: url('/f2.jpg');"></a>
-            <a href="/programs/new-programs" class="program-carousel-card" data-img="f3.jpg" style="background-image: url('/f3.jpg');"></a>
-            <a href="/programs/new-programs" class="program-carousel-card" data-img="f4.jpg" style="background-image: url('/f4.jpg');"></a>
-            <a href="/programs/new-programs" class="program-carousel-card" data-img="f5.jpg" style="background-image: url('/f5.jpg');"></a>
-            <a href="/programs/new-programs" class="program-carousel-card" data-img="f6.jpg" style="background-image: url('/f6.jpg');"></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section class="about-consultancy section-padding">
     <div class="container">
       <div class="about-layout">
@@ -1229,6 +1204,18 @@ const services = [
   @media (max-width: 576px) {
     .services-gallery-right {
       grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 450px) {
+    .services-header-left .gold-text {
+      font-size: 2.5rem;
+    }
+    .services-header-left h2 {
+      font-size: 2rem;
+    }
+    .services-header-left p {
+      font-size: 1rem;
     }
   }
 
