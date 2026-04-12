@@ -65,6 +65,7 @@ export async function POST({ request }) {
       investor: "Investor Visas",
       talent: "Global Talent Visas",
       other: "General Inquiry",
+      general: "General Visa",
     };
 
     const subject = `Website Contact: ${serviceLabels[service] || "General Inquiry"} from ${name}`;
